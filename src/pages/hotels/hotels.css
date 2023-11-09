@@ -1,0 +1,72 @@
+.hotelSearch {
+  height: 60px;
+  background-color: white;
+  border: 3px solid #febb02;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0px;
+  border-radius: 5px;
+  position: absolute;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.hotelSearchIcon {
+  color: lightgray;
+}
+.hotelSearchItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hotelSearchInput {
+  border: none;
+  outline: none;
+}
+.hotelSearchText {
+  color: lightgray;
+  cursor: pointer;
+}
+.hotelDate {
+  position: absolute;
+  top: 54px;
+  z-index: 999;
+}
+
+.hotelOptions {
+  position: absolute;
+  top: 54px;
+  background-color: white;
+  color: gray;
+  border-radius: 5px;
+  box-shadow: 6px 8px 14px 1px rgba(0, 0, 0, 0.64);
+  -webkit-box-shadow: 6px 8px 14px 1px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: 6px 8px 14px 1px rgba(0, 0, 0, 0.64);
+  z-index: 999;
+}
+
+.hotelOptionItem {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.optionCounter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.optionCounterButton {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--primary-color);
+}
+
+.optionCounterButton:disabled {
+  cursor: not-allowed;
+}
+
+.search-one .site-form form .form-group .alt-icon {
+  right: 12px;
+  font-size: 14px;
+}
