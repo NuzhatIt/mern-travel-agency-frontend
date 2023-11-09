@@ -19,10 +19,12 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  
 }
 .hotelSearchInput {
   border: none;
   outline: none;
+  
 }
 .hotelSearchText {
   color: lightgray;

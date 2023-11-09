@@ -27,6 +27,10 @@ import WhatsAppChat from "./components/whatsapp/WhatsappChat";
 import Flight from "./pages/flight/Flight";
 import Navbar3 from "./components/navbar/Navbar3";
 import Footer3 from "./components/footer/Footer3";
+import Visa from "./pages/visa/Visa";
+import Hajj from "./pages/hajj/Hajj";
+import Insurance from "./pages/insurance/Insurance";
+import GroupTicket from "./pages/groupticket/GroupTicket";
 
 function App() {
   return (
@@ -55,18 +59,18 @@ function App() {
 
           {/* <Route path="/destinations" element={<Destinations />} /> */}
           {/* <Route path="/destinationdetails" element={<DestinationDetails />} /> */}
-          <Route path="/services/hotels" element={<Hotels />} />
-          <Route path="/services/hotels/:id" element={<HotelDetails />} />
+          <Route path="/services/visa" element={<Visa />} />
+          {/* <Route path="/services/visa/:id" element={<HotelDetails />} /> */}
           <Route path="/services/flight" element={<Flight />} />
-          <Route path="/services/flight/:id" element={<HotelDetails />} />
+          {/* <Route path="/services/flight/:id" element={<HotelDetails />} /> */}
           <Route path="/services/hotels" element={<Hotels />} />
-          <Route path="/services/hotels/:id" element={<HotelDetails />} />
-          <Route path="/services/hotels" element={<Hotels />} />
-          <Route path="/services/hotels/:id" element={<HotelDetails />} />
-          <Route path="/services/hotels" element={<Hotels />} />
-          <Route path="/services/hotels/:id" element={<HotelDetails />} />
-          <Route path="/services/hotels" element={<Hotels />} />
-          <Route path="/services/hotels/:id" element={<HotelDetails />} />
+          {/* <Route path="/services/hotels/:id" element={<HotelDetails />} /> */}
+          <Route path="/services/hajj" element={<Hajj />} />
+          <Route path="/services/hajj/:id" element={<Hajj />} />
+          <Route path="/services/insurance" element={<Insurance />} />
+          {/* <Route path="/services/insurance/:id" element={<HotelDetails />} /> */}
+          <Route path="/services/groupticket" element={<GroupTicket />} />
+          {/* <Route path="/services/groupticket/:id" element={<HotelDetails />} /> */}
 
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />

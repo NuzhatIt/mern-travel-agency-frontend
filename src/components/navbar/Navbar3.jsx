@@ -52,7 +52,7 @@ const Navbar3 = () => {
                         <a href="#">Services</a>
                         <ul>
                           <li>
-                            <a href="#">Visa</a>
+                            <a href="/services/visa">Visa</a>
                           </li>
                           <li>
                             <a href="/services/flight">Flight Ticket</a>
@@ -61,16 +61,16 @@ const Navbar3 = () => {
                             <a href="/services/hotels">Hotels</a>
                           </li>
                           <li>
-                            <a href="#">Umrah/Hajj</a>
+                            <a href="/services/hajj">Umrah/Hajj</a>
                           </li>
                           {/* <li>
                             <a href="#">Hajj</a>
                           </li> */}
                           <li>
-                            <a href="#">Insurance</a>
+                            <a href="/services/insurance">Insurance</a>
                           </li>
                           <li>
-                            <a href="#">Group Ticket</a>
+                            <a href="/services/groupticket">Group Ticket</a>
                           </li>
                         </ul>
                       </li>

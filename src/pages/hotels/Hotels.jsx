@@ -245,7 +245,6 @@ const Hotels = () => {
                     <a className="active" href="tour-packages.html">
                       <span className="fas fa-th-large" />
                     </a>{" "}
-                     {" "}
                     <a href="tour-list.html">
                       <span className="fas fa-th-list" />
                     </a>

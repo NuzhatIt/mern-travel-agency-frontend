@@ -275,6 +275,7 @@ const Flight = () => {
             </div>
           </div>
         </div>
+        {/*Serach One end*/}
       </section>
     </div>
   );
