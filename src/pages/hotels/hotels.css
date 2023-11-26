@@ -72,3 +72,50 @@
   right: 12px;
   font-size: 14px;
 }
+
+
+/* test */
+.choose-trip{
+  min-height: 257px;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(7,4,146,.1), 0 24px 60px rgba(6,47,125,.05), 0 12px 24px rgba(27,59,119,.05);
+
+}
+
+/* .feiled-wrapper{
+
+} */
+
+/* @media (min-width: 1200px) .feiled-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.4fr 1fr;
+} */
+
+.search-input-button, .search-input-button2, .search-input-button3 {
+  color: #6c757d!important;
+  border: 1px solid #dee2e6!important;
+  border-radius: 10px;
+}
+
+.flight_search_field, .search_field_submit {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-weight: 700;
+  color: #6c757d!important;
+}
+
+.flight_search_field {
+  background: none;
+  max-height: 32px!important;
+  padding: 0;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.swap-btn, .swap-btn2 {
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #fff;
+  box-shadow: 0 1px 30px 0 rgba(0,0,0,.1);
+}

@@ -34,7 +34,7 @@ import GroupTicket from "./pages/groupticket/GroupTicket";
 
 function App() {
   return (
-    <>
+    <div className="page-wrapper">
       <Navbar3 />
       <WhatsAppChat />
 
@@ -79,7 +79,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer3 />
-    </>
+    </div>
   );
 }
 

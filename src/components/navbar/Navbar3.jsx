@@ -18,7 +18,7 @@ const Navbar3 = () => {
         <div className="header-upper   ">
           <div className="auto-container ">
             {/* <!-- Main Box --> */}
-            <div className="main-box ">
+            <div className="main-box clearfix">
               {/* <!--Logo--> */}
               <div className="logo-box">
                 <div className="logo">
