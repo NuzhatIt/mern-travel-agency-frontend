@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "antd": "^5.11.4",
     "bootstrap": "^5.3.2",
     "date-fns": "^2.30.0",
     "fancybox": "^3.0.1",
