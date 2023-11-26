@@ -1284,15 +1284,15 @@ form label.error {
 }
 
 .main-menu .navigation > li:hover > a:after,
-.main-menu .navigation > li.current > a:after,
-.main-menu .navigation > li.current-menu-item > a:after {
+.main-menu .navigation > li > a.active:after,
+.main-menu .navigation > li.current-menu-item > a.active:after {
   opacity: 1;
   visibility: visible;
   width: 12px;
 }
 
 .main-menu .navigation > li:hover > a,
-.main-menu .navigation > li.current > a,
+.main-menu .navigation > li > a.active,
 .main-menu .navigation > li.current-menu-item > a {
   color: var(--primary-color);
   text-decoration: none;
@@ -1301,7 +1301,7 @@ form label.error {
 
 .main-menu .navigation > li > ul {
   position: absolute;
-  visibility: hidden; /* new edit */
+  visibility: hidden; /*new edit*/
   left: 0px;
   top: 100%;
   width: 240px;
@@ -1359,7 +1359,7 @@ form label.error {
 }
 
 .main-menu .navigation > li > ul > li:hover > a,
-.main-menu .navigation > li > ul > li.current > a {
+.main-menu .navigation > li > ul > li > a.active {
   color: var(--primary-color);
   background: rgba(0, 0, 0, 0.05);
 }
@@ -1529,8 +1529,8 @@ body.visible-sidebar {
 }
 
 .hidden-bar .side-menu ul li a:hover,
-.hidden-bar .side-menu ul > li.current > a,
-.hidden-bar .side-menu ul > li > ul > li.current > a {
+.hidden-bar .side-menu ul > li > a.active,
+.hidden-bar .side-menu ul > li > ul > li > a.active {
   color: var(--primary-color);
 }
 
