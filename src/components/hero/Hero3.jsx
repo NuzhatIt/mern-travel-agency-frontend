@@ -6,6 +6,8 @@ import yellow1 from "../../assets/images/elements/yellow-1.png";
 import manWithBag from "../../assets/images/resources/misc/man-with-bag.jpg";
 
 import useWOW from "../../custom-hooks/useWOW";
+import { DatePicker, Space } from "antd";
+const { RangePicker } = DatePicker;
 
 const Hero3 = () => {
   const { initWOW } = useWOW();
@@ -43,8 +45,8 @@ const Hero3 = () => {
                       <p className="travilo-text">
                         Embrace the journey; Travel with passion and purpose.
                       </p>
-                      {/* <div className="form-box site-form"> */}
-                        {/* <form method="post" action="index.html">
+                      <div className="form-box site-form">
+                        <form method="post" action="index.html">
                           <div className="row clearfix">
                             <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
                               <div className="field-label">Destination</div>
@@ -59,7 +61,7 @@ const Hero3 = () => {
                                 <i className="alt-icon fa fa-map-marker-alt"></i>
                               </div>
                             </div>
-                            <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                            {/* <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
                               <div className="field-label">Check in</div>
                               <div className="field-inner">
                                 <input
@@ -72,11 +74,11 @@ const Hero3 = () => {
                                 />
                                 <i className="alt-icon fa fa-calendar-alt"></i>
                               </div>
-                            </div>
-                            <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                            </div> */}
+                            <div className="form-group col-xl-6 col-lg-12 col-md-6 col-sm-12">
                               <div className="field-label">Check out</div>
                               <div className="field-inner">
-                                <input
+                                {/* <input
                                   className="datepicker"
                                   type="text"
                                   name="field-name"
@@ -84,7 +86,19 @@ const Hero3 = () => {
                                   placeholder="Check out"
                                   required
                                 />
-                                <i className="alt-icon fa fa-calendar-alt"></i>
+                                <i className="alt-icon fa fa-calendar-alt"></i> */}
+                                <Space direction="vertical" size={12}>
+                                  <RangePicker
+                                    style={{
+                                      height: "50px",
+                                    }}
+                                  />
+                                  {/* <RangePicker showTime />
+                                  <RangePicker picker="week" />
+                                  <RangePicker picker="month" />
+                                  <RangePicker picker="quarter" />
+                                  <RangePicker picker="year" /> */}
+                                </Space>
                               </div>
                             </div>
                             <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
@@ -106,8 +120,8 @@ const Hero3 = () => {
                               Search <i className="fa-solid fa-search"></i>
                             </span>
                           </button>
-                        </form> */}
-                      {/* </div> */}
+                        </form>
+                      </div>
                       <p className="lower-text">
                         <span>3200</span> tour packages waiting for you
                       </p>

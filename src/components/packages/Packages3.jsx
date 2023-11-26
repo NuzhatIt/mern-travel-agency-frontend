@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { MdFamilyRestroom } from "react-icons/md";
 import { PiMountainsThin } from "react-icons/pi";
@@ -78,6 +78,60 @@ const Packages3 = () => {
       },
     ],
   };
+  const [packageItems, setPackageItems] = useState([
+    {
+      id: 1,
+      banner: italy,
+      icon: tIcon9,
+      largeIcon: <MdFamilyRestroom />,
+      name: "Italy",
+      details: " Romantic Venice, The City of Canals and Love",
+      duration: "5 Days 6 Nights",
+      user: 2,
+      review: "1260 Reviews",
+      rating: "4.8",
+      price: "$199",
+    },
+    {
+      id: 2,
+      banner: italy,
+      icon: tIcon9,
+      largeIcon: <MdFamilyRestroom />,
+      name: "Italy",
+      details: " Romantic Venice, The City of Canals and Love",
+      duration: "5 Days 6 Nights",
+      user: 2,
+      review: "1260 Reviews",
+      rating: "4.8",
+      price: "$199",
+    },
+    {
+      id: 3,
+      banner: italy,
+      icon: tIcon9,
+      largeIcon: <MdFamilyRestroom />,
+      name: "Italy",
+      details: " Romantic Venice, The City of Canals and Love",
+      duration: "5 Days 6 Nights",
+      user: 2,
+      review: "1260 Reviews",
+      rating: "4.8",
+      price: "$199",
+    },
+    {
+      id: 4,
+      banner: italy,
+      icon: tIcon9,
+      largeIcon: <MdFamilyRestroom />,
+      name: "Italy",
+      details: " Romantic Venice, The City of Canals and Love",
+      duration: "5 Days 6 Nights",
+      user: 2,
+      review: "1260 Reviews",
+      rating: "4.8",
+      price: "$199",
+    },
+  ]);
 
   return (
     <>
@@ -98,51 +152,57 @@ const Packages3 = () => {
             {/* <div className="packages-carousel"> */}
             <Slider {...settings}>
               {/* <!--Block--> */}
-              <div className="package-block ">
-                <div className="inner-box">
-                  <div className="image-box">
-                    <div className="image">
-                      <a href="#">
-                        <img src={italy} alt="Italy" />
-                      </a>
+              {packageItems.map((packageItem) => (
+                <>
+                  <div className="package-block ">
+                    <div className="inner-box">
+                      <div className="image-box">
+                        <div className="image">
+                          <a href="#">
+                            <img src={packageItem.banner} alt="Italy" />
+                          </a>
+                        </div>
+                      </div>
+                      <div className="lower-box">
+                        <div className="p-icon">
+                          <img src={packageItem.icon} alt="" />
+                          <span className="icon ">{packageItem.largeIcon}</span>
+                        </div>
+                        <div className="location">{packageItem.name}</div>
+                        <h5>
+                          <a href="">{packageItem.details}</a>
+                        </h5>
+                        <div className="info clearfix">
+                          <div className="duration">
+                            <i className="fa-solid fa-clock"></i>{" "}
+                            {packageItem.duration}
+                          </div>
+                          <div className="persons">
+                            <i className="fa-solid fa-user"></i>{" "}
+                            {packageItem.user}
+                          </div>
+                        </div>
+                        <div className="bottom-box clearfix">
+                          <div className="rating">
+                            <a href="#" className="theme-btn">
+                              <i className="fa-solid fa-star"></i>
+                              <strong>{packageItem.rating}</strong> &ensp;
+                              <span className="count">
+                                {packageItem.review}
+                              </span>
+                            </a>
+                          </div>
+                          <p className="price">
+                            Start from &ensp;
+                            <span className="amount">{packageItem.price}</span>
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="lower-box">
-                    <div className="p-icon">
-                      <img src={tIcon9} alt="" />
-                      <span className="icon ">
-                        <MdFamilyRestroom />
-                      </span>
-                    </div>
-                    <div className="location">Italy</div>
-                    <h5>
-                      <a href="">
-                        Romantic Venice, The City of Canals and Love
-                      </a>
-                    </h5>
-                    <div className="info clearfix">
-                      <div className="duration">
-                        <i className="fa-solid fa-clock"></i> 5 Days 6 Nights
-                      </div>
-                      <div className="persons">
-                        <i className="fa-solid fa-user"></i> 2
-                      </div>
-                    </div>
-                    <div className="bottom-box clearfix">
-                      <div className="rating">
-                        <a href="#" className="theme-btn">
-                          <i className="fa-solid fa-star"></i>
-                          <strong>4.8</strong> &ensp;
-                          <span className="count">1260 Reviews</span>
-                        </a>
-                      </div>
-                      <p className="price">
-                        Start from &ensp;<span className="amount">$199</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                </>
+              ))}
+
               {/* <!-- .package-block --> */}
 
               {/* <!--Block--> */}
