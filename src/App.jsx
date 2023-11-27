@@ -31,6 +31,7 @@ import Visa from "./pages/visa/Visa";
 import Hajj from "./pages/hajj/Hajj";
 import Insurance from "./pages/insurance/Insurance";
 import GroupTicket from "./pages/groupticket/GroupTicket";
+import Dashboard from "./pages/user/Dashboard";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blogdetails" element={<BlogDetails />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
       <Footer3 />
