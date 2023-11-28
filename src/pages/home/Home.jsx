@@ -13,7 +13,7 @@ import WhyUs3 from "../../components/whyUs/WhyUs3";
 
 const Home = () => {
   return (
-    <div className="page-wrapper">
+    <>
       <Hero3 />
       <Intro3 />
       <AboutUs3 />
@@ -27,7 +27,7 @@ const Home = () => {
       <News3 />
 
       <Subscribe3 />
-    </div>
+    </>
   );
 };
 
