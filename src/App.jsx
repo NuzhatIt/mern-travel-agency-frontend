@@ -30,6 +30,7 @@ import TourList from "./pages/tourList/TourList";
 import TourPackages from "./pages/tourPackages/TourPackages";
 import Visa from "./pages/visa/Visa";
 import NotFound from "./pages/notFound/NotFound";
+import Dashboard from "./pages/user/Dashboard";
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blogdetails" element={<BlogDetails />} />
         <Route path="/contact" element={<Contact />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<NotFound/>}/>
