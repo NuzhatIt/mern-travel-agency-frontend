@@ -1,6 +1,7 @@
 import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const onFinish = (values) => {
@@ -65,8 +66,7 @@ const Login = () => {
                 className="login-form-button"
               >
                 Log in
-              </Button>
-              Or <a href="">register now!</a>
+              </Button> Or <Link to="/signup">Signup now!</Link>
             </Form.Item>
           </Form>
         </div>
