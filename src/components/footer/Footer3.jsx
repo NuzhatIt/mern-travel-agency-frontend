@@ -1,4 +1,5 @@
 import logo from "../../assets/images/logo.png";
+import flyingBirdLogo from '../../assets/images/flying-bird-logo3.png'
 
 import omanThumb from "../../assets/images/resources/thumbnails/oman-thumb.jpg";
 import maldivesThumb from "../../assets/images/resources/thumbnails/maldives-thumb.jpg";
@@ -12,16 +13,15 @@ const Footer3 = () => {
               <div className="footer-column col-xl-4 col-lg-3 col-md-6 col-sm-12">
                 <div className="footer-widget about-widget">
                   <div className="footer-logo">
-                    <a href="index.html" title="Travilo">
-                      <img src={logo} alt="" title="Travilo" />
+                    <a href="index.html" title="Flying Bird">
+                      <img src={flyingBirdLogo} alt="" title="Flying Bird" />
                     </a>
                   </div>
                   <div className="footer-info">
                     <ul className="info">
                       <li className="address">
                         <a href="#">
-                          <i className="icon fa fa-map-marker-alt"></i> Love
-                          Street, Muscat, Oman
+                          <i className="icon fa fa-map-marker-alt"></i> Dhaka, Bangladesh
                         </a>
                       </li>
                       <li className="phone">
@@ -33,7 +33,7 @@ const Footer3 = () => {
                       <li className="email">
                         <a href="mailto:hello@travilo.com">
                           <i className="icon fa fa-envelope"></i>
-                          hello@travilo.com
+                          demo@flyingbird.com
                         </a>
                       </li>
                     </ul>
@@ -159,7 +159,7 @@ const Footer3 = () => {
         <div className="auto-container">
           <div className="inner clearfix">
             <div className="copyright">
-              All rights researved <strong>Travilo</strong> &copy; 2023
+              All rights researved <strong>Nuzhat It Solution</strong> &copy; 2023
             </div>
             <div className="bottom-links">
               <ul className="clearfix">

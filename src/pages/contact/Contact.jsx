@@ -3,6 +3,7 @@ import Navbar3 from "../../components/navbar/Navbar3";
 
 import banner4 from "../../assets/images/resources/featured/banner-4.jpg";
 import useWOW from "../../custom-hooks/useWOW";
+import Banner from "../../components/banner/Banner";
 
 const Contact = () => {
   const { initWOW } = useWOW();
@@ -10,29 +11,9 @@ const Contact = () => {
     initWOW();
   }, []);
   return (
-    <div className="page-wrapper">
+    <>
       {/* Banner Section */}
-      <section className="inner-banner">
-        <div
-          className="image-layer"
-          style={{
-            backgroundImage: `url(${banner4})`,
-          }}
-        ></div>
-        <div className="auto-container">
-          <div className="content-box">
-            <h1>Contact</h1>
-            <div className="bread-crumb">
-              {/* <ul className="clearfix">
-                <li>
-                  <a href="index.html">Home</a>
-                </li>
-                <li className="current">Contact</li>
-              </ul> */}
-            </div>
-          </div>
-        </div>
-      </section>
+      <Banner bannerImage={banner4} heading="Contact"/>
       {/*End Banner Section */}
 
       {/*Contact Section*/}
@@ -165,7 +146,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

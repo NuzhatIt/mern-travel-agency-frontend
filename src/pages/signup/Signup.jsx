@@ -113,7 +113,7 @@ const Signup = () => {
     <div className="signup-section">
       <div className="auto-container">
         <div className="row clearfix justify-content-center">
-          <h1 className="">Signup</h1>
+          <h1 className="text-center">Signup</h1>
           <Form
             {...formItemLayout}
             form={form}
