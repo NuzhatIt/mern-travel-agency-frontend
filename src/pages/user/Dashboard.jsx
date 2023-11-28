@@ -227,7 +227,7 @@ const Dashboard = () => {
             textAlign: "center",
           }}
         >
-          ©2023 Jassa
+          user dashboard
         </Footer>
       </Layout>
     </Layout>
