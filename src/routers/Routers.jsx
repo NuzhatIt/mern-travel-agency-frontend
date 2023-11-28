@@ -18,6 +18,7 @@ import Dashboard from "../pages/user/Dashboard";
 import Login from "../pages/login/Login";
 import Signup from "../pages/signup/Signup";
 import NotFound from "../pages/notFound/NotFound";
+import Sample from "../pages/sample/Sample";
 
 const Routers = () => {
   return (
@@ -41,6 +42,7 @@ const Routers = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="*" element={<NotFound />} />
+      <Route path="/sample" element={<Sample />} />
     </Routes>
   );
 };

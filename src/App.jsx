@@ -34,12 +34,11 @@ import Dashboard from "./pages/user/Dashboard";
 import Routers from "./routers/Routers";
 import Layout from "./components/layout/Layout";
 
-
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Layout />
+        <Routers />
       </BrowserRouter>
     </>
   );
