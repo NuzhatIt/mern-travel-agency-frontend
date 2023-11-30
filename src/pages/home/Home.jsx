@@ -17,7 +17,7 @@ import Footer3 from "../../components/footer/Footer3";
 
 const Home = () => {
   return (
-    <>
+    <div className="page-wrapper">
       <WhatsAppChat />
       <ScrollToTop />
       <Navbar3 />
@@ -34,7 +34,7 @@ const Home = () => {
       <News3 />
       <Subscribe3 />
       <Footer3 />
-    </>
+    </div>
   );
 };
 
