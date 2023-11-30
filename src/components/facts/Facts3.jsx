@@ -21,10 +21,10 @@ const Facts3 = () => {
   }, [counter]);
 
   return (
-    <div>
+    <>
       {/* <!--Facts Section--> */}
       <div className="facts-section">
-        <div className="video-box wow fadeInUp">
+        {/* <div className="video-box wow fadeInUp">
           <div className="image-box">
             <img src={boats} alt="" title="" />
             <a
@@ -36,7 +36,7 @@ const Facts3 = () => {
               </span>
             </a>
           </div>
-        </div>
+        </div> */}
         <div className="auto-container">
           <div className="fact-counter">
             <div className="row clearfix">
@@ -120,7 +120,7 @@ const Facts3 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

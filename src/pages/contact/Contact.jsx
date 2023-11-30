@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
-import Navbar3 from "../../components/navbar/Navbar3";
-
 import banner4 from "../../assets/images/resources/featured/banner-4.jpg";
 import useWOW from "../../custom-hooks/useWOW";
 import Banner from "../../components/banner/Banner";
+import Navbar3 from '../../components/navbar/Navbar3';
+import WhatsAppChat from './../../components/whatsapp/WhatsappChat';
+import ScrollToTop from './../../components/scroll-to-top/ScrollToTop';
+import Footer3 from './../../components/footer/Footer3';
 
 const Contact = () => {
   const { initWOW } = useWOW();
@@ -11,7 +13,10 @@ const Contact = () => {
     initWOW();
   }, []);
   return (
-    <>
+    <div className="page-wrapper">
+      <Navbar3 />
+      <WhatsAppChat />
+      <ScrollToTop />
       {/* Banner Section */}
       <Banner bannerImage={banner4} heading="Contact"/>
       {/*End Banner Section */}
@@ -146,7 +151,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </>
+      <Footer3 />
+    </div>
   );
 };
 

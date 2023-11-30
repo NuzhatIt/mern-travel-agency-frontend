@@ -11,7 +11,7 @@ const Intro3 = () => {
   }, []);
 
   return (
-    <div>
+    <>
       {/* <!--Intro Section--> */}
       <div className="intro-section">
         <div className="auto-container">
@@ -82,7 +82,7 @@ const Intro3 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
