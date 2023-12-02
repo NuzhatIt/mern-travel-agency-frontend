@@ -1870,6 +1870,9 @@ body.visible-sidebar {
   position: relative;
   padding: 130px 0px 90px;
 }
+.signup-link{
+  margin-left: 170px;
+}
 
 /*** 
 
@@ -1882,6 +1885,10 @@ body.visible-sidebar {
 .signup-section {
   position: relative;
   padding: 130px 0px 90px;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 /*** 
@@ -2127,6 +2134,7 @@ body.visible-sidebar {
   max-width: 450px;
   transform: rotate(15deg);
   border-radius: 10px;
+  margin: 50px;
 }
 
 .about-section .image-col .image-box .image:last-child {
@@ -3736,6 +3744,7 @@ body.visible-sidebar {
 .subscribe-section .content-box {
   position: relative;
   display: block;
+  margin-top: 50px;
   padding: 94px 90px 50px 90px;
   background: var(--tertiary-color);
   color: #fff;
@@ -6267,7 +6276,8 @@ body.visible-sidebar {
   font-size: 90px;
   text-transform: capitalize;
   font-weight: 400;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
+  margin-top: 50px;
 }
 
 .inner-banner .bread-crumb {
@@ -10709,5 +10719,3 @@ body.visible-sidebar {
 .ui-widget-content .ui-state-default {
   text-align: center;
 }
-
-

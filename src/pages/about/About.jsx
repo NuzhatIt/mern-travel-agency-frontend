@@ -19,6 +19,10 @@ import fIcon13 from "../../assets/images/icons/f-icon-13.png"
 import Banner from "../../components/banner/Banner";
 import useWOW from "../../custom-hooks/useWOW";
 import TeamMembers from "../../components/teamMembers/TeamMembers";
+import Navbar3 from './../../components/navbar/Navbar3';
+import Footer3 from './../../components/footer/Footer3';
+import WhatsAppChat from './../../components/whatsapp/WhatsappChat';
+import ScrollToTop from './../../components/scroll-to-top/ScrollToTop';
 
 const About = () => {
   const { initWOW } = useWOW();
@@ -26,7 +30,10 @@ const About = () => {
     initWOW();
   }, []);
   return (
-    <>
+    <div className="page-wrapper">
+      <Navbar3 />
+      <WhatsAppChat />
+      <ScrollToTop />
       {/* banner section */}
       <Banner bannerImage={banner6} heading="About Us"/>
 
@@ -234,7 +241,8 @@ const About = () => {
       <Testimonial3 />
       <Partners3 />
       <Subscribe3 />
-    </>
+      <Footer3 />
+    </div>
   );
 };
 

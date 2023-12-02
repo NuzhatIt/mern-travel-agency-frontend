@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar3 from "../../components/navbar/Navbar3";
 import { DateRange } from "react-date-range";
 
 import banner3 from "../../assets/images/resources/featured/banner-3.jpg";
@@ -12,8 +11,11 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
-import Footer3 from "../../components/footer/Footer3";
 import { MdLocationOn } from "react-icons/md";
+import Navbar3 from './../../components/navbar/Navbar3';
+import WhatsAppChat from './../../components/whatsapp/WhatsappChat';
+import ScrollToTop from './../../components/scroll-to-top/ScrollToTop';
+import Footer3 from './../../components/footer/Footer3';
 
 const Hotels = () => {
   const [openDate, setOpenDate] = useState(false);
@@ -46,6 +48,9 @@ const Hotels = () => {
 
   return (
     <div className="page-wrapper">
+      <Navbar3 />
+      <WhatsAppChat />
+      <ScrollToTop />
       {/* Banner Section */}
       <section className="inner-banner">
         <div
@@ -635,6 +640,7 @@ const Hotels = () => {
           </div>
         </div>
       </section>
+      <Footer3 />
     </div>
   );
 };

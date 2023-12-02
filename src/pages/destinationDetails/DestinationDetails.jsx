@@ -21,10 +21,17 @@ import tIcon1 from "../../assets/images/icons/t-icon-1.png";
 import istanbulMomHotel from "../../assets/images/resources/destinations/istanbul-mom-hotel.jpg";
 import littleSofiaHotel from "../../assets/images/resources/destinations/istanbul-little-sofia-hotel.jpg";
 import istanbulBeachHotel from "../../assets/images/resources/destinations/istanbul-beach-hotel.jpg";
+import Navbar3 from './../../components/navbar/Navbar3';
+import WhatsAppChat from './../../components/whatsapp/WhatsappChat';
+import ScrollToTop from './../../components/scroll-to-top/ScrollToTop';
+import Footer3 from './../../components/footer/Footer3';
 
 const DestinationDetails = () => {
   return (
     <div className="page-wrapper">
+      <Navbar3 />
+      <WhatsAppChat />
+      <ScrollToTop />
       {/* Banner Section */}
       <section className="inner-banner">
         <div
@@ -668,6 +675,7 @@ const DestinationDetails = () => {
           </div>
         </div>
       </div>
+      <Footer3 />
     </div>
   );
 };
