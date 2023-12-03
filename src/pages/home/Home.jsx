@@ -10,10 +10,17 @@ import Testimonial3 from "../../components/testimonial/Testimonial3";
 import TourTypes3 from "../../components/tourTypes/TourTypes3";
 import TrendingDestinations3 from "../../components/trendingDestinations/TrendingDestinations3";
 import WhyUs3 from "../../components/whyUs/WhyUs3";
+import WhatsAppChat from "../../components/whatsapp/WhatsappChat";
+import ScrollToTop from "../../components/scroll-to-top/ScrollToTop";
+import Navbar3 from "../../components/navbar/Navbar3";
+import Footer3 from "../../components/footer/Footer3";
 
 const Home = () => {
   return (
     <div className="page-wrapper">
+      <WhatsAppChat />
+      <ScrollToTop />
+      <Navbar3 />
       <Hero3 />
       <Intro3 />
       <AboutUs3 />
@@ -25,8 +32,8 @@ const Home = () => {
       <Testimonial3 />
       <Partners3 />
       <News3 />
-
       <Subscribe3 />
+      <Footer3 />
     </div>
   );
 };

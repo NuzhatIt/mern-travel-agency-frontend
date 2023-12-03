@@ -1284,15 +1284,15 @@ form label.error {
 }
 
 .main-menu .navigation > li:hover > a:after,
-.main-menu .navigation > li.current > a:after,
-.main-menu .navigation > li.current-menu-item > a:after {
+.main-menu .navigation > li > a.active:after,
+.main-menu .navigation > li.current-menu-item > a.active:after {
   opacity: 1;
   visibility: visible;
   width: 12px;
 }
 
 .main-menu .navigation > li:hover > a,
-.main-menu .navigation > li.current > a,
+.main-menu .navigation > li > a.active,
 .main-menu .navigation > li.current-menu-item > a {
   color: var(--primary-color);
   text-decoration: none;
@@ -1301,7 +1301,7 @@ form label.error {
 
 .main-menu .navigation > li > ul {
   position: absolute;
-  visibility: hidden; /* new edit */
+  visibility: hidden; /*new edit*/
   left: 0px;
   top: 100%;
   width: 240px;
@@ -1359,7 +1359,7 @@ form label.error {
 }
 
 .main-menu .navigation > li > ul > li:hover > a,
-.main-menu .navigation > li > ul > li.current > a {
+.main-menu .navigation > li > ul > li > a.active {
   color: var(--primary-color);
   background: rgba(0, 0, 0, 0.05);
 }
@@ -1529,8 +1529,8 @@ body.visible-sidebar {
 }
 
 .hidden-bar .side-menu ul li a:hover,
-.hidden-bar .side-menu ul > li.current > a,
-.hidden-bar .side-menu ul > li > ul > li.current > a {
+.hidden-bar .side-menu ul > li > a.active,
+.hidden-bar .side-menu ul > li > ul > li > a.active {
   color: var(--primary-color);
 }
 
@@ -1862,6 +1862,38 @@ body.visible-sidebar {
 /*** 
 
 ====================================================================
+  login Section
+====================================================================
+
+***/
+.login-section {
+  position: relative;
+  padding: 130px 0px 90px;
+}
+.signup-link{
+  margin-left: 170px;
+}
+
+/*** 
+
+====================================================================
+  signup Section
+====================================================================
+
+***/
+
+.signup-section {
+  position: relative;
+  padding: 130px 0px 90px;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/*** 
+
+====================================================================
   Intro Section
 ====================================================================
 
@@ -2102,6 +2134,7 @@ body.visible-sidebar {
   max-width: 450px;
   transform: rotate(15deg);
   border-radius: 10px;
+  margin: 50px;
 }
 
 .about-section .image-col .image-box .image:last-child {
@@ -3711,6 +3744,7 @@ body.visible-sidebar {
 .subscribe-section .content-box {
   position: relative;
   display: block;
+  margin-top: 50px;
   padding: 94px 90px 50px 90px;
   background: var(--tertiary-color);
   color: #fff;
@@ -6242,7 +6276,8 @@ body.visible-sidebar {
   font-size: 90px;
   text-transform: capitalize;
   font-weight: 400;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
+  margin-top: 50px;
 }
 
 .inner-banner .bread-crumb {
@@ -10684,5 +10719,3 @@ body.visible-sidebar {
 .ui-widget-content .ui-state-default {
   text-align: center;
 }
-
-

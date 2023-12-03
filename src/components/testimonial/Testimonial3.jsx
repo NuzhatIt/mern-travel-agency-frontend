@@ -92,7 +92,7 @@ const Testimonial3 = () => {
   }, []);
 
   return (
-    <div>
+    <>
       {/* <!--Testimonials Section--> */}
       <div className="testimonials-section">
         <div className="auto-container">
@@ -413,7 +413,7 @@ const Testimonial3 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

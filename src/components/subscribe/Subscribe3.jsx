@@ -10,7 +10,7 @@ const Subscribe3 = () => {
     initWOW();
   }, []);
   return (
-    <div>
+    <>
       {/* <!--Subscribe Section--> */}
       <div className="subscribe-section">
         <div className="auto-container">
@@ -68,7 +68,7 @@ const Subscribe3 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

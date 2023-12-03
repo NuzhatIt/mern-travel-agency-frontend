@@ -9,6 +9,8 @@ import { MdFlightLand, MdFlightTakeoff } from "react-icons/md";
 import bannerFlight from "../../assets/images/resources/featured/bannerFlight.jpg";
 import Footer3 from "./../../components/footer/Footer3";
 import Navbar3 from "./../../components/navbar/Navbar3";
+import WhatsAppChat from './../../components/whatsapp/WhatsappChat';
+import ScrollToTop from './../../components/scroll-to-top/ScrollToTop';
 
 const Flight = () => {
   const [openDate, setOpenDate] = useState(false);
@@ -46,6 +48,9 @@ const Flight = () => {
   // console.log(date);
   return (
     <div className="page-wrapper">
+      <Navbar3 />
+      <WhatsAppChat />
+      <ScrollToTop />
       {/* Banner Section */}
       <section className="inner-banner">
         <div
@@ -277,6 +282,7 @@ const Flight = () => {
         </div>
         {/*Serach One end*/}
       </section>
+      <Footer3 />
     </div>
   );
 };

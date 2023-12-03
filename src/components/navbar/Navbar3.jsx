@@ -1,8 +1,9 @@
 import logoImage from "../../assets/images/logo.png";
+import flyingBirdLogo from '../../assets/images/flying-bird-logo3.png'
 
-import menuIcon from "../../assets/images/icons/menu-icon.svg";
-import { HiOutlineMenu } from "react-icons/hi";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import menuIcon from "../../assets/images/icons/menu-icon.svg";
 
 const Navbar3 = () => {
   const [nav, setNav] = useState(false);
@@ -10,6 +11,8 @@ const Navbar3 = () => {
   const handleNav = () => {
     setNav((prevNav) => !prevNav);
   };
+
+  // const [activNav, setActiveNav] = useState("");
   return (
     <>
       {/* // <!-- Main Header--> */}
@@ -22,13 +25,13 @@ const Navbar3 = () => {
               {/* <!--Logo--> */}
               <div className="logo-box">
                 <div className="logo">
-                  <a href="#" title="Travilo">
+                  <NavLink to="#" title="Travilo">
                     <img
-                      src={logoImage}
+                      src={flyingBirdLogo}
                       alt="Travilo Logo"
                       title="Travilo Logo"
                     />
-                  </a>
+                  </NavLink>
                 </div>
               </div>
 
@@ -37,96 +40,216 @@ const Navbar3 = () => {
                 <div className="nav-outer clearfix">
                   <nav className="main-menu">
                     <ul className="navigation clearfix">
-                      <li className="current dropdown">
-                        <a href="/">Home</a>
+                      <li className="dropdown current">
+                        <NavLink
+                          to="/"
+                          className={({ isActive, isPending }) =>
+                            isActive ? "active" : isPending ? "pending" : ""
+                          }
+                        >
+                          Home
+                        </NavLink>
+                        {/* <NavLink to="/">Home</NavLink> */}
                         {/* <ul>
                           <li>
-                            <a href="#">Home 01</a>
+                            <NavLink to="#">Home 01</NavLink>
                           </li>
                           <li>
-                            <a href="#">Home 02</a>
+                            <NavLink to="#">Home 02</NavLink>
                           </li>
                         </ul> */}
                       </li>
                       <li className="dropdown">
-                        <a href="#">Services</a>
+                        <NavLink
+                          to="/services"
+                          className={({ isActive, isPending }) =>
+                            isActive ? "active" : isPending ? "pending" : ""
+                          }
+                        >
+                          Services
+                        </NavLink>
                         <ul>
                           <li>
-                            <a href="/services/visa">Visa</a>
+                            <NavLink
+                              to="/services/visa"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Visa
+                            </NavLink>
                           </li>
                           <li>
-                            <a href="/services/flight">Flight Ticket</a>
+                            <NavLink
+                              to="/services/flight"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Flight Ticket
+                            </NavLink>
                           </li>
                           <li>
-                            <a href="/services/hotels">Hotels</a>
+                            <NavLink
+                              to="/services/hotels"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Hotels
+                            </NavLink>
                           </li>
                           <li>
-                            <a href="/services/hajj">Umrah/Hajj</a>
+                            <NavLink
+                              to="/services/hajj"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Umrah/Hajj
+                            </NavLink>
                           </li>
                           {/* <li>
-                            <a href="#">Hajj</a>
+                            <NavLink to="#">Hajj</NavLink>
                           </li> */}
                           <li>
-                            <a href="/services/insurance">Insurance</a>
+                            <NavLink
+                              to="/services/currentinsurance"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Insurance
+                            </NavLink>
                           </li>
                           <li>
-                            <a href="/services/groupticket">Group Ticket</a>
+                            <NavLink
+                              to="/services/groupticket"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Group Ticket
+                            </NavLink>
                           </li>
                         </ul>
                       </li>
                       <li className="dropdown">
-                        <a href="#">Tours</a>
+                        <NavLink
+                          to="/tours"
+                          className={({ isActive, isPending }) =>
+                            isActive ? "active" : isPending ? "pending" : ""
+                          }
+                        >
+                          Tours
+                        </NavLink>
                         <ul>
                           <li>
-                            <a href="#">Tours List</a>
+                            <NavLink
+                              to="/toursList"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Tours List
+                            </NavLink>
                           </li>
                           <li>
-                            <a href="#">Tour Packages</a>
+                            <NavLink
+                              to="/tourPackages"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Tour Packages
+                            </NavLink>
                           </li>
                           <li>
-                            <a href="#">Tour Details</a>
+                            <NavLink
+                              to="/tourDetails"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Tour Details
+                            </NavLink>
                           </li>
                           {/* <li>
-                            <a href="#">Activities</a>
+                            <NavLink to="#">Activities</NavLink>
                           </li>
                           <li>
-                            <a href="#">Activity Details</a>
+                            <NavLink to="#">Activity Details</NavLink>
                           </li> */}
                         </ul>
                       </li>
                       {/* <li className="dropdown">
-                        <a href="#">Destination</a>
+                        <NavLink to="#">Destination</NavLink>
                         <ul>
                           <li>
-                            <a href="#">All Destinations</a>
+                            <NavLink to="#">All Destinations</NavLink>
                           </li>
                           <li>
-                            <a href="#">Destination Single</a>
+                            <NavLink to="#">Destination Single</NavLink>
                           </li>
                           <li>
-                            <a href="#">Hotels</a>
+                            <NavLink to="#">Hotels</NavLink>
                           </li>
                           <li>
-                            <a href="#">Hotel Details</a>
+                            <NavLink to="#">Hotel Details</NavLink>
                           </li>
                         </ul>
                       </li> */}
                       <li>
-                        <a href="#">About</a>
+                        <NavLink
+                          to="/about"
+                          className={({ isActive, isPending }) =>
+                            isActive ? "active" : isPending ? "pending" : ""
+                          }
+                        >
+                          About
+                        </NavLink>
                       </li>
                       <li className="dropdown">
-                        <a href="#">News</a>
+                        <NavLink
+                          to="/news"
+                          className={({ isActive, isPending }) =>
+                            isActive ? "active" : isPending ? "pending" : ""
+                          }
+                        >
+                          News
+                        </NavLink>
                         <ul>
                           <li>
-                            <a href="#">Our Blog</a>
+                            <NavLink
+                              to="/blog"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Our Blog
+                            </NavLink>
                           </li>
                           <li>
-                            <a href="#">Blog Details</a>
+                            <NavLink
+                              to="/blogDetails"
+                              className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                              }
+                            >
+                              Blog Details
+                            </NavLink>
                           </li>
                         </ul>
                       </li>
                       <li>
-                        <a href="#">Contact</a>
+                        <NavLink
+                          to="/contact"
+                          className={({ isActive, isPending }) =>
+                            isActive ? "active" : isPending ? "pending" : ""
+                          }
+                        >
+                          Contact
+                        </NavLink>
                       </li>
                     </ul>
                   </nav>
@@ -147,7 +270,7 @@ const Navbar3 = () => {
               {/* ----------- */}
               <div className="links-box clearfix">
                 <div className="link login">
-                  <a href="#">Login / Signup</a>
+                  <NavLink to="/login">Login / Signup</NavLink>
                 </div>
                 {/* <div className="link lang-box hidden">
                   <div className="lang-btn clearfix">
@@ -156,48 +279,48 @@ const Navbar3 = () => {
                   </div>
                   <ul className="lang-list">
                     <li>
-                      <a href="#">Tur</a>
+                      <NavLink to="#">Tur</NavLink>
                     </li>
                     <li>
-                      <a href="#">Esp</a>
+                      <NavLink to="#">Esp</NavLink>
                     </li>
                     <li>
-                      <a href="#">Rus</a>
+                      <NavLink to="#">Rus</NavLink>
                     </li>
                     <li>
-                      <a href="#">Hin</a>
+                      <NavLink to="#">Hin</NavLink>
                     </li>
                   </ul>
                 </div> */}
                 <div className="link social">
                   <ul className="social-links clearfix">
                     <li>
-                      <a href="#" className="facebook">
+                      <NavLink to="#" className="facebook">
                         <i className="fab fa-facebook-f"></i>
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="#" className="twitter">
+                      <NavLink to="#" className="twitter">
                         <i className="fab fa-twitter"></i>
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="#" className="linkedin">
+                      <NavLink to="#" className="linkedin">
                         <i className="fab fa-linkedin-in"></i>
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="#" className="youtube">
+                      <NavLink to="#" className="youtube">
                         <i className="fab fa-youtube"></i>
-                      </a>
+                      </NavLink>
                     </li>
                   </ul>
                 </div>
                 <div className="link call-to">
-                  <a href="tel:+96899999000">
+                  <NavLink to="tel:+96899999000">
                     <i className="icon fa-solid fa-phone"></i> Call Us
                     <span className="nmbr">+968 99999000</span>
-                  </a>
+                  </NavLink>
                 </div>
               </div>
               {/* --------- */}
@@ -239,13 +362,13 @@ const Navbar3 = () => {
                 {/* logo will be copied here ! */}
 
                 <div className="logo">
-                  <a href="#" title="Travilo">
+                  <NavLink to="#" title="Travilo">
                     <img
                       src={logoImage}
-                      alt="Travilo Logo"
-                      title="Travilo Logo"
+                      alt="Flying Bird Logo"
+                      title="Flying Bird Logo"
                     />
-                  </a>
+                  </NavLink>
                 </div>
               </div>
 
@@ -256,77 +379,77 @@ const Navbar3 = () => {
 
                 <ul className="navigation clearfix">
                   <li className="current dropdown">
-                    <a href="#">Home</a>
+                    <NavLink to="#">Home</NavLink>
                     <ul className="hidden">
                       <li>
-                        <a href="#">Home 01</a>
+                        <NavLink to="#">Home 01</NavLink>
                       </li>
                       <li>
-                        <a href="#">Home 02</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="dropdown">
-                    <a href="#">Test</a>
-                    <ul>
-                      <li>
-                        <a href="#">Test1</a>
+                        <NavLink to="#">Home 02</NavLink>
                       </li>
                     </ul>
                   </li>
                   <li className="dropdown">
-                    <a href="#">Tours</a>
+                    <NavLink to="#">Test</NavLink>
                     <ul>
                       <li>
-                        <a href="#">Tours List</a>
-                      </li>
-                      <li>
-                        <a href="#">Tour Packages</a>
-                      </li>
-                      <li>
-                        <a href="#">Tour Details</a>
-                      </li>
-                      <li>
-                        <a href="#">Activities</a>
-                      </li>
-                      <li>
-                        <a href="#">Activity Details</a>
+                        <NavLink to="#">Test1</NavLink>
                       </li>
                     </ul>
                   </li>
                   <li className="dropdown">
-                    <a href="#">Destination</a>
+                    <NavLink to="#">Tours</NavLink>
                     <ul>
                       <li>
-                        <a href="#">All Destinations</a>
+                        <NavLink to="#">Tours List</NavLink>
                       </li>
                       <li>
-                        <a href="#">Destination Single</a>
+                        <NavLink to="#">Tour Packages</NavLink>
                       </li>
                       <li>
-                        <a href="#">Hotels</a>
+                        <NavLink to="#">Tour Details</NavLink>
                       </li>
                       <li>
-                        <a href="#">Hotel Details</a>
+                        <NavLink to="#">Activities</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="#">Activity Details</NavLink>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="dropdown">
+                    <NavLink to="#">Destination</NavLink>
+                    <ul>
+                      <li>
+                        <NavLink to="#">All Destinations</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="#">Destination Single</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="#">Hotels</NavLink>
+                      </li>
+                      <li>
+                        <NavLink to="#">Hotel Details</NavLink>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <a href="#">About</a>
+                    <NavLink to="#">About</NavLink>
                   </li>
                   <li className="dropdown">
-                    <a href="#">News</a>
+                    <NavLink to="#">News</NavLink>
                     <ul>
                       <li>
-                        <a href="#">Our Blog</a>
+                        <NavLink to="#">Our Blog</NavLink>
                       </li>
                       <li>
-                        <a href="#">Blog Details</a>
+                        <NavLink to="#">Blog Details</NavLink>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    <a href="#">Contact</a>
+                    <NavLink to="#">Contact</NavLink>
                   </li>
                 </ul>
               </nav>
@@ -335,9 +458,12 @@ const Navbar3 = () => {
               <div className="links-box clearfix">
                 <div className="clearfix">
                   <div className="link">
-                    <a href="contact.html" className="theme-btn btn-style-one">
+                    <NavLink
+                      to="contact.html"
+                      className="theme-btn btn-style-one"
+                    >
                       <span>Login / Signup</span>
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               </div>

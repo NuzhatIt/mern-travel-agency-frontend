@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import bgGradient2 from "../../assets/images/background/bg-gradient-2.png";
 import bgGradient26 from "../../assets/images/background/bg-gradient-26.png";
 import green1 from "../../assets/images/elements/green-1.png";
+import pink4 from "../../assets/images/elements/pink-4.png";
+import yellow3 from "../../assets/images/elements/yellow-3.png";
 import fIcon1 from "../../assets/images/icons/f-icon-1.png";
 import fIcon2 from "../../assets/images/icons/f-icon-2.png";
-import yellow3 from "../../assets/images/elements/yellow-3.png";
-import pink4 from "../../assets/images/elements/pink-4.png";
-import tickets from "../../assets/images/resources/misc/tickets.jpg";
 import manHiking2 from "../../assets/images/resources/misc/man-hiking-2.jpg";
+import tickets from "../../assets/images/resources/misc/tickets.jpg";
 
 import useWOW from "../../custom-hooks/useWOW";
 
@@ -17,7 +17,7 @@ const AboutUs3 = () => {
     initWOW();
   }, []);
   return (
-    <div>
+    <>
       {/* <!--About Us Section--> */}
       <div className="about-section">
         <div className="bg-grad-right">
@@ -126,7 +126,7 @@ const AboutUs3 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
