@@ -14,11 +14,15 @@ import About from "../pages/about/About";
 import Blog from "../pages/blog/Blog";
 import BlogDetails from "../pages/blogDetails/BlogDetails";
 import Contact from "../pages/contact/Contact";
-import Dashboard from "../pages/user/Dashboard";
+// import Dashboard from "../pages/user/Dashboard";
 import Login from "../pages/login/Login";
 import Signup from "../pages/signup/Signup";
 import NotFound from "../pages/notFound/NotFound";
 import Sample from "../pages/sample/Sample";
+import Dashboard from "../pages/dashboard/Dashboard";
+// import Tables from "../pages/dashboard/Tables";
+import "../assets/styles/main.css";
+import "../assets/styles/responsive.css";
 
 const Routers = () => {
   return (
@@ -38,7 +42,20 @@ const Routers = () => {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blogdetails" element={<BlogDetails />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard" element={<Dashboard active={"home"} />} />
+      <Route
+        path="/dashboard/tables"
+        element={<Dashboard active={"tables"} />}
+      />
+      <Route
+        path="/dashboard/billing"
+        element={<Dashboard active={"billing"} />}
+      />
+      {/* <Route path="/dashboard/rtl" element={<Dashboard active={"rtl"} />} /> */}
+      <Route
+        path="/dashboard/profile"
+        element={<Dashboard active={"profile"} />}
+      />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="*" element={<NotFound />} />
