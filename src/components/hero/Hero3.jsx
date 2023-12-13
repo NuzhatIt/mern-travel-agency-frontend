@@ -177,7 +177,7 @@ const Hero3 = () => {
                                   <Input defaultValue="Combine input and button" />
                                   <Button type="primary">Submit</Button>
                                 </Space.Compact> */}
-                                <SearchBox/>
+                                <SearchBox />
                               </div>
                             </div>
                           </div>
