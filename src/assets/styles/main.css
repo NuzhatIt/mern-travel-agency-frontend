@@ -633,15 +633,15 @@ header.ant-layout-header.subheader {
   margin-left: 20px;
 }
 
-.logo img {
+.dashboard-logo img {
   width: 32px;
   margin-right: 10px;
 }
 
-.logo {
+.dashboard-logo {
   margin-bottom: 15px;
 }
-.logo span {
+.dashboard-logo span {
   font-size: 16px;
   font-weight: 600;
 }
@@ -1457,12 +1457,12 @@ span.ismobile {
   border-left: 1px solid #ddddde;
 }
 
-.social {
+.dashboard-social {
   text-align: center;
   margin-top: 25px;
 }
 
-.social button {
+.dashboard-social button {
   margin: 0px 5px;
   display: inline-flex;
   align-items: center;
@@ -2981,16 +2981,16 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   border-right: 0px;
 }
 
-.social svg path {
+.dashboard-social svg path {
   fill: #fff;
 }
 
-.settings-drawer.settings-drawer-rtl .social svg {
+.settings-drawer.settings-drawer-rtl .dashboard-social svg {
   margin-right: 0px;
   margin-left: 5px;
 }
 
-.social svg {
+.dashboard-social svg {
   width: 15px;
   height: 15px;
 }

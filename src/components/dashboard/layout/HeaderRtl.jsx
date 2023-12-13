@@ -406,7 +406,7 @@ function Header({
                   <Title level={5} className="mb-2">
                     Thank you for sharing!
                   </Title>
-                  <ButtonContainer className="social">
+                  <ButtonContainer className="dashboard-social">
                     <Button type="black">{<TwitterOutlined />}TWEET</Button>
                     <Button type="black">{<FacebookFilled />}SHARE</Button>
                   </ButtonContainer>
