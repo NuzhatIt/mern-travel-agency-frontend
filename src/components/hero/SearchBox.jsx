@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Table, Tooltip, Popover, Button } from "antd";
-import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
-
+import { Table, Popover, Button } from "antd";
+import { PlusOutlined, MinusOutlined, UserOutlined } from "@ant-design/icons";
+const totalSeat = [1];
+const seatLimit = 7;
 const SearchBox = () => {
   const columns = [
     {
@@ -16,6 +17,7 @@ const SearchBox = () => {
       key: "plus",
       render: (_, row) => (
         <Button
+          disabled={totalSeat[0] >= seatLimit}
           icon={<PlusOutlined></PlusOutlined>}
           size={"small"}
           // style={{ display: "contents" }}
@@ -34,6 +36,7 @@ const SearchBox = () => {
       key: "minus",
       render: (_, row) => (
         <Button
+          disabled={row.key === "1" ? row.seat <= 1 : row.seat <= 0}
           icon={<MinusOutlined></MinusOutlined>}
           size={"small"}
           // style={{ display: "contents" }}
@@ -46,51 +49,34 @@ const SearchBox = () => {
   const [data, setData] = useState([
     {
       key: "1",
-      name: "Adult",
-      seat: 0,
+      name: `Adult (12 years+)`,
+      seat: 1,
     },
     {
       key: "2",
-      name: "Children",
+      name: `Children (2-12 years)`,
       seat: 0,
     },
     {
       key: "3",
-      name: "Others",
+      name: `Infant (below 2 years)`,
       seat: 0,
     },
   ]);
+
   const updateData = (rowNo, action) => {
+    action === 1 ? totalSeat[0]++ : totalSeat[0]--;
+
     const updatedData = data.map((rowdata) =>
       rowdata.key === rowNo
         ? { ...rowdata, seat: rowdata.seat + action }
         : rowdata
     );
+
     setData(updatedData);
+    console.log(totalSeat[0]);
   };
-  // const data = [
-  //   {
-  //     key: "1",
-  //     name: "Adult",
-  //     plus: "",
-  //     seatNo: seatNumber[],
-  //     minus: "",
-  //   },
-  //   {
-  //     key: "2",
-  //     name: "Children",
-  //     plus: "",
-  //     age: 32,
-  //     minus: "",
-  //   },
-  //   {
-  //     key: "3",
-  //     name: "Joe Black",
-  //     plus: "",
-  //     age: 32,
-  //     minus: "",
-  //   },
-  // ];
+
   const content = (
     <div>
       <Table
@@ -117,7 +103,10 @@ const SearchBox = () => {
       onOpenChange={handleOpenChange}
       trigger="click"
     >
-      <Button>BL</Button>
+      <Button
+        style={{ height: "50px", width: "150px" }}
+        icon={<UserOutlined />}
+      >{`${totalSeat} Person`}</Button>
     </Popover>
   );
 };

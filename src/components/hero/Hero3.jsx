@@ -6,7 +6,7 @@ import yellow1 from "../../assets/images/elements/yellow-1.png";
 import manWithBag from "../../assets/images/resources/misc/man-with-bag.jpg";
 import "./hero3.css";
 
-import { DatePicker, Input, Radio, Select, Space, Button } from "antd";
+import { DatePicker, Input, Radio, Select } from "antd";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlinePerson } from "react-icons/md";
 import SearchBox from "./SearchBox";
@@ -152,35 +152,30 @@ const Hero3 = () => {
                                 />
                               </div>
                             </div>
-                            <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                              <div className="field-label">Check Out</div>
-                              <div className="field-inner">
-                                <DatePicker
-                                  style={{ height: "50px" }}
-                                  onChange={onChange}
-                                />
-                              </div>
-                            </div>
 
+                            {/* dont show checkout when flight is oneway*/}
+                            {!(service === "flight" && tripType === 1) && (
+                              <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                <div className="field-label">Check Out</div>
+                                <div className="field-inner">
+                                  <DatePicker
+                                    style={{ height: "50px" }}
+                                    onChange={onChange}
+                                  />
+                                </div>
+                              </div>
+                            )}
+
+                            {/* number of guests/ customers  */}
                             <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
                               <div className="field-label">Guests</div>
                               <div className="field-inner">
-                                {/* <Input
-                                  placeholder="Guest"
-                                  prefix={<MdOutlinePerson />}
-                                /> */}
-                                {/* <Space.Compact
-                                  style={{
-                                    width: "100%",
-                                  }}
-                                >
-                                  <Input defaultValue="Combine input and button" />
-                                  <Button type="primary">Submit</Button>
-                                </Space.Compact> */}
                                 <SearchBox />
                               </div>
                             </div>
                           </div>
+
+                           {/* when flight is multicity show another search box */}
                           {service === "flight" && tripType === 3 && (
                             <div className="search-box-main">
                               {service === "flight" && (
@@ -233,6 +228,7 @@ const Hero3 = () => {
                                   />
                                 </div>
                               </div>
+                              
                             </div>
                           )}
                         </div>
