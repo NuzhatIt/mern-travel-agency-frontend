@@ -17,9 +17,10 @@ const SearchBox = () => {
       key: "plus",
       render: (_, row) => (
         <Button
+          className="seach-box"
           disabled={totalSeat[0] >= seatLimit}
-          icon={<PlusOutlined></PlusOutlined>}
-          size={"small"}
+          icon={<PlusOutlined />}
+          size={"middle"}
           // style={{ display: "contents" }}
           onClick={() => updateData(row.key, 1)}
         ></Button>
@@ -36,11 +37,11 @@ const SearchBox = () => {
       key: "minus",
       render: (_, row) => (
         <Button
+          className="seach-box"
+          // style={{ margin: "5px" }}
           disabled={row.key === "1" ? row.seat <= 1 : row.seat <= 0}
-          icon={<MinusOutlined></MinusOutlined>}
-          size={"small"}
-          // style={{ display: "contents" }}
-          block
+          icon={<MinusOutlined />}
+          size={"middle"}
           onClick={() => updateData(row.key, -1)}
         ></Button>
       ),
@@ -80,6 +81,8 @@ const SearchBox = () => {
   const content = (
     <div>
       <Table
+        className="search-box"
+        style={{ width: "350px" }}
         columns={columns}
         dataSource={data}
         pagination={false}
