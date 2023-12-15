@@ -1,5 +1,5 @@
 import useWOW from "../../custom-hooks/useWOW";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import bgGradient13 from "../../assets/images/background/bg-gradient-13.png";
 import bgGradient14 from "../../assets/images/background/bg-gradient-14.png";
 import banner7 from "../../assets/images/resources/featured/banner-7.jpg";
@@ -9,8 +9,10 @@ const Subscribe3 = () => {
   useEffect(() => {
     initWOW();
   }, []);
+  const [email,setEmail]= useState("");
+  const onChange = ()=>{}
   return (
-    <div>
+    <>
       {/* <!--Subscribe Section--> */}
       <div className="subscribe-section">
         <div className="auto-container">
@@ -50,9 +52,10 @@ const Subscribe3 = () => {
                             <input
                               type="email"
                               name="email"
-                              value=""
+                              value={email}
                               placeholder="Submit your email"
                               required
+                              onChange={onChange}
                             />
                           </div>
                           <button type="submit" className="theme-btn">
@@ -68,7 +71,7 @@ const Subscribe3 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

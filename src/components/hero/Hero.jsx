@@ -4,6 +4,7 @@ import "wowjs/css/libs/animate.css";
 import bannerArrow from "../../assets/images/background/banner-arrow.png";
 import bgGradient1 from "../../assets/images/background/bg-gradient-1.png";
 import yellow1 from "../../assets/images/elements/yellow-1.png";
+import Test from "../test/test";
 
 const Hero = () => {
   useEffect(() => {
@@ -49,6 +50,7 @@ const Hero = () => {
                       <p className="relative block text-xl mb-[30px] ">
                         Embrace the journey; Travel with passion and purpose.
                       </p>
+                      <Test />
                       <div className="relative block bg-white"></div>
                     </div>
                   </div>

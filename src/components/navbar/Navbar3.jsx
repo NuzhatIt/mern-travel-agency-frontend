@@ -1,4 +1,5 @@
 import logoImage from "../../assets/images/logo.png";
+import flyingBirdLogo from '../../assets/images/flying-bird-logo3.png'
 
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -26,7 +27,7 @@ const Navbar3 = () => {
                 <div className="logo">
                   <NavLink to="#" title="Travilo">
                     <img
-                      src={logoImage}
+                      src={flyingBirdLogo}
                       alt="Travilo Logo"
                       title="Travilo Logo"
                     />
@@ -269,7 +270,7 @@ const Navbar3 = () => {
               {/* ----------- */}
               <div className="links-box clearfix">
                 <div className="link login">
-                  <NavLink to="#">Login / Signup</NavLink>
+                  <NavLink to="/login">Login / Signup</NavLink>
                 </div>
                 {/* <div className="link lang-box hidden">
                   <div className="lang-btn clearfix">
@@ -364,8 +365,8 @@ const Navbar3 = () => {
                   <NavLink to="#" title="Travilo">
                     <img
                       src={logoImage}
-                      alt="Travilo Logo"
-                      title="Travilo Logo"
+                      alt="Flying Bird Logo"
+                      title="Flying Bird Logo"
                     />
                   </NavLink>
                 </div>

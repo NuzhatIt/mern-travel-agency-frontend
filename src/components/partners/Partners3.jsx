@@ -49,7 +49,7 @@ const Partners3 = () => {
   };
 
   return (
-    <div>
+    <>
       {/* <!-- Partners Section --> */}
       <div className="partners-section">
         <div className="auto-container">
@@ -160,7 +160,7 @@ const Partners3 = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

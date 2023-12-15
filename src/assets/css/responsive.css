@@ -159,6 +159,9 @@
 }
 
 @media only screen and (max-width: 1199px) {
+  .signup-link {
+    margin-left: 140px;
+  }
   .main-header .nav-toggler {
     display: block;
     float: right;
@@ -421,7 +424,8 @@
   }
 
   .intro-section {
-    padding: 70px 0 20px;
+    /* padding: 70px 0 20px; */
+    padding: 110px 0 20px;
   }
 
   .about-section {
@@ -754,6 +758,9 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .signup-link {
+    margin-left: 85px;
+  }
   .main-header .header-upper .links-box {
     display: none;
   }
@@ -1147,6 +1154,9 @@
 }
 
 @media only screen and (max-width: 599px) {
+  .signup-link {
+    margin-left: 40px;
+  }
   .carousel-box .slick-dots {
     display: none !important;
   }

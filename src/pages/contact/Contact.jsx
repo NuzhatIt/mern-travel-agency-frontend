@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
-import Navbar3 from "../../components/navbar/Navbar3";
-
 import banner4 from "../../assets/images/resources/featured/banner-4.jpg";
 import useWOW from "../../custom-hooks/useWOW";
+import Banner from "../../components/banner/Banner";
+import Navbar3 from '../../components/navbar/Navbar3';
+import WhatsAppChat from './../../components/whatsapp/WhatsappChat';
+import ScrollToTop from './../../components/scroll-to-top/ScrollToTop';
+import Footer3 from './../../components/footer/Footer3';
 
 const Contact = () => {
   const { initWOW } = useWOW();
@@ -11,28 +14,11 @@ const Contact = () => {
   }, []);
   return (
     <div className="page-wrapper">
+      <Navbar3 />
+      <WhatsAppChat />
+      <ScrollToTop />
       {/* Banner Section */}
-      <section className="inner-banner">
-        <div
-          className="image-layer"
-          style={{
-            backgroundImage: `url(${banner4})`,
-          }}
-        ></div>
-        <div className="auto-container">
-          <div className="content-box">
-            <h1>Contact</h1>
-            <div className="bread-crumb">
-              {/* <ul className="clearfix">
-                <li>
-                  <a href="index.html">Home</a>
-                </li>
-                <li className="current">Contact</li>
-              </ul> */}
-            </div>
-          </div>
-        </div>
-      </section>
+      <Banner bannerImage={banner4} heading="Contact"/>
       {/*End Banner Section */}
 
       {/*Contact Section*/}
@@ -165,6 +151,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <Footer3 />
     </div>
   );
 };

@@ -153,7 +153,7 @@ const Packages3 = () => {
             <Slider {...settings}>
               {/* <!--Block--> */}
               {packageItems.map((packageItem) => (
-                <>
+                <div key={packageItem.id}>
                   <div className="package-block ">
                     <div className="inner-box">
                       <div className="image-box">
@@ -200,7 +200,7 @@ const Packages3 = () => {
                       </div>
                     </div>
                   </div>
-                </>
+                </div>
               ))}
 
               {/* <!-- .package-block --> */}

@@ -16,10 +16,17 @@ import taghazout from "../../assets/images/resources/destinations/taghazout.jpg"
 import london from "../../assets/images/resources/destinations/london.jpg";
 import berlin from "../../assets/images/resources/destinations/berlin.jpg";
 import ghorem from "../../assets/images/resources/destinations/ghorem.jpg";
+import Navbar3 from './../../components/navbar/Navbar3';
+import WhatsAppChat from './../../components/whatsapp/WhatsappChat';
+import ScrollToTop from './../../components/scroll-to-top/ScrollToTop';
+import Footer3 from './../../components/footer/Footer3';
 
 const Destinations = () => {
   return (
     <div className="page-wrapper">
+      <Navbar3 />
+      <WhatsAppChat />
+      <ScrollToTop />
       {/* Banner Section */}
       <section className="inner-banner">
         <div
@@ -347,6 +354,7 @@ const Destinations = () => {
           </div>
         </div>
       </section>
+      <Footer3 />
     </div>
   );
 };
