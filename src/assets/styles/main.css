@@ -526,6 +526,9 @@ h4 {
 .ant-btn svg {
   margin-right: 5px;
 }
+.ant-btn.seach-box svg {
+  margin-right: 0px;
+}
 .layout-dashboard .header-control svg {
   width: 20px;
   height: 20px;
@@ -1647,6 +1650,10 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 .ant-table-tbody > tr > td,
 .ant-table-thead > tr > th {
   padding: 16px 25px;
+}
+.ant-table-tbody.search-box > tr > td,
+.ant-table-thead.search-box > tr > th {
+  padding: 0px;
 }
 .tablespace {
   overflow: hidden;
