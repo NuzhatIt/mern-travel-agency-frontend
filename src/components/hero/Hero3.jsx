@@ -10,6 +10,7 @@ import { DatePicker, Input, Radio, Select } from "antd";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlinePerson } from "react-icons/md";
 import SearchBox from "./SearchBox";
+import Test from "../test/test";
 // const { RangePicker } = DatePicker;
 
 const Hero3 = () => {
@@ -52,6 +53,7 @@ const Hero3 = () => {
                         <img src={bgGradient1} alt="" />
                       </div>
                       <h3>Start Travelling Now</h3>
+                      {/* <Test /> */}
                       <h1>
                         <i className="d-icon">
                           <img src={yellow1} alt="" title="" />
@@ -175,7 +177,7 @@ const Hero3 = () => {
                             </div>
                           </div>
 
-                           {/* when flight is multicity show another search box */}
+                          {/* when flight is multicity show another search box */}
                           {service === "flight" && tripType === 3 && (
                             <div className="search-box-main">
                               {service === "flight" && (
@@ -228,7 +230,6 @@ const Hero3 = () => {
                                   />
                                 </div>
                               </div>
-                              
                             </div>
                           )}
                         </div>
