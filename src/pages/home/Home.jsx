@@ -22,6 +22,7 @@ const Home = () => {
       <ScrollToTop />
       <Navbar3 />
       <Hero3 />
+      
       <Intro3 />
       <AboutUs3 />
       <Packages3 />

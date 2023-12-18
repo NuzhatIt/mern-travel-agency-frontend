@@ -6,11 +6,12 @@ import yellow1 from "../../assets/images/elements/yellow-1.png";
 import manWithBag from "../../assets/images/resources/misc/man-with-bag.jpg";
 import "./hero3.css";
 
-import { DatePicker, Input, Radio, Select } from "antd";
+import { Button, DatePicker, Input, Radio, Select } from "antd";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlinePerson } from "react-icons/md";
 import SearchBox from "./SearchBox";
 import Test from "../test/test";
+import { SearchOutlined } from "@ant-design/icons";
 // const { RangePicker } = DatePicker;
 
 const Hero3 = () => {
@@ -85,155 +86,186 @@ const Hero3 = () => {
 
                         {/* <form method="" action=""> */}
                         <div className="searchBox">
-                          {/* <div className="row clearfix"> */}
-                          {service === "flight" && (
-                            <div className="flightTypeRadio">
-                              <Radio.Group
-                                name="flightTypeGroup"
-                                defaultValue={1}
-                                onChange={changeTripType}
-                              >
-                                <Radio value={1}>One Way</Radio>
-                                <Radio value={2}>Round Trip</Radio>
-                                <Radio value={3}>Multi City</Radio>
-                              </Radio.Group>
-
-                              <Select
-                                defaultValue="economy"
-                                style={{
-                                  width: 120,
-                                }}
-                                onChange={handleChange}
-                                options={[
-                                  {
-                                    value: "economy",
-                                    label: "Economy",
-                                  },
-
-                                  {
-                                    value: "business",
-                                    label: "Business",
-                                  },
-                                  {
-                                    value: "firstclass",
-                                    label: "First Class",
-                                  },
-                                ]}
-                              />
-                            </div>
-                          )}
-                          <div className="search-box-main">
+                          <div className="row clearfix">
                             {service === "flight" && (
-                              <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                <div className="field-label">From</div>
-                                <div className="field-inner">
-                                  <Input
-                                    placeholder="From"
-                                    prefix={<CiLocationOn />}
-                                    onChange={onChange}
-                                  />
-                                </div>
-                              </div>
-                            )}
-                            <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                              <div className="field-label">To</div>
-                              <div className="field-inner">
-                                <Input
-                                  placeholder="To"
-                                  prefix={<CiLocationOn />}
-                                  onChange={onChange}
+                              <div className="flightTypeRadio">
+                                <Radio.Group
+                                  name="flightTypeGroup"
+                                  defaultValue={1}
+                                  onChange={changeTripType}
+                                >
+                                  <Radio value={1}>One Way</Radio>
+                                  <Radio value={2}>Round Trip</Radio>
+                                  <Radio value={3}>Multi City</Radio>
+                                </Radio.Group>
+
+                                <Select
+                                  defaultValue="economy"
+                                  style={{
+                                    width: 120,
+                                  }}
+                                  onChange={handleChange}
+                                  options={[
+                                    {
+                                      value: "economy",
+                                      label: "Economy",
+                                    },
+
+                                    {
+                                      value: "business",
+                                      label: "Business",
+                                    },
+                                    {
+                                      value: "firstclass",
+                                      label: "First Class",
+                                    },
+                                  ]}
                                 />
                               </div>
-                            </div>
-                            <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                              <div className="field-label">Check in</div>
-                              <div className="field-inner">
-                                <DatePicker
-                                  style={{ height: "50px" }}
-                                  onChange={onChange}
-                                />
-                              </div>
-                            </div>
-
-                            {/* dont show checkout when flight is oneway*/}
-                            {!(service === "flight" && tripType === 1) && (
-                              <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                <div className="field-label">Check Out</div>
-                                <div className="field-inner">
-                                  <DatePicker
-                                    style={{ height: "50px" }}
-                                    onChange={onChange}
-                                  />
-                                </div>
-                              </div>
                             )}
-
-                            {/* number of guests/ customers  */}
-                            <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                              <div className="field-label">Guests</div>
-                              <div className="field-inner">
-                                <SearchBox />
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* when flight is multicity show another search box */}
-                          {service === "flight" && tripType === 3 && (
-                            <div className="search-box-main">
-                              {service === "flight" && (
+                            <div className="row clearfix">
+                              <div className="search-box-main">
+                                {service === "flight" && (
+                                  <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div className="field-label">From</div>
+                                    <div className="field-inner">
+                                      <Input
+                                        placeholder="From"
+                                        prefix={<CiLocationOn />}
+                                        onChange={onChange}
+                                      />
+                                    </div>
+                                  </div>
+                                )}
                                 <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                  <div className="field-label">From</div>
+                                  <div className="field-label">To</div>
                                   <div className="field-inner">
                                     <Input
-                                      placeholder="From"
+                                      placeholder="To"
                                       prefix={<CiLocationOn />}
                                       onChange={onChange}
                                     />
                                   </div>
                                 </div>
-                              )}
-                              <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                <div className="field-label">To</div>
-                                <div className="field-inner">
-                                  <Input
-                                    placeholder="To"
-                                    prefix={<CiLocationOn />}
-                                    onChange={onChange}
-                                  />
+                                <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                  <div className="field-label">Check in</div>
+                                  <div className="field-inner">
+                                    <DatePicker
+                                      style={{ height: "50px" }}
+                                      onChange={onChange}
+                                    />
+                                  </div>
                                 </div>
-                              </div>
-                              <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                <div className="field-label">Check in</div>
-                                <div className="field-inner">
-                                  <DatePicker
-                                    style={{ height: "50px" }}
-                                    onChange={onChange}
-                                  />
+
+                                {/* dont show checkout when flight is oneway*/}
+                                {!(service === "flight" && tripType === 1) && (
+                                  <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div className="field-label">Check Out</div>
+                                    <div className="field-inner">
+                                      <DatePicker
+                                        style={{ height: "50px" }}
+                                        onChange={onChange}
+                                      />
+                                    </div>
+                                  </div>
+                                )}
+
+                                {/* number of guests/ customers  */}
+                                <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                  <div className="field-label">Guests</div>
+                                  <div className="field-inner">
+                                    <SearchBox />
+                                  </div>
                                 </div>
-                              </div>
-                              <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                <div className="field-label">Check Out</div>
-                                <div className="field-inner">
-                                  <DatePicker
-                                    style={{ height: "50px" }}
-                                    onChange={onChange}
-                                  />
+
+                                {/* search button */}
+                                <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                  <div className="field-label"></div>
+                                  <div className="field-inner">
+                                    <Button
+                                      type="primary"
+                                      style={{
+                                        marginTop: "20px",
+                                        height: "50px",
+                                        width: "140px",
+                                      }}
+                                      icon={<SearchOutlined />}
+                                    >
+                                      Search
+                                    </Button>
+                                    {/* <button
+                                type="button"
+                                className="themeBtn btnStyleOne"
+                              >
+                                <span>
+                                  Search <i className="fa-solid fa-search"></i>
+                                </span>
+                              </button> */}
+                                  </div>
                                 </div>
+                                {/* <div className="searchBtn">
+                                <Button type="primary" className="theme-btn btn-style-one" icon={<SearchOutlined />}>Search</Button>
+                              </div> */}
                               </div>
 
-                              <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                <div className="field-label">Guests</div>
-                                <div className="field-inner">
-                                  <Input
-                                    placeholder="Guest"
-                                    prefix={<MdOutlinePerson />}
-                                  />
+                              {/* when flight is multicity show another search box */}
+                              {service === "flight" && tripType === 3 && (
+                                <div className="search-box-main">
+                                  {service === "flight" && (
+                                    <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                      <div className="field-label">From</div>
+                                      <div className="field-inner">
+                                        <Input
+                                          placeholder="From"
+                                          prefix={<CiLocationOn />}
+                                          onChange={onChange}
+                                        />
+                                      </div>
+                                    </div>
+                                  )}
+                                  <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div className="field-label">To</div>
+                                    <div className="field-inner">
+                                      <Input
+                                        placeholder="To"
+                                        prefix={<CiLocationOn />}
+                                        onChange={onChange}
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div className="field-label">Check in</div>
+                                    <div className="field-inner">
+                                      <DatePicker
+                                        style={{ height: "50px" }}
+                                        onChange={onChange}
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div className="field-label">Check Out</div>
+                                    <div className="field-inner">
+                                      <DatePicker
+                                        style={{ height: "50px" }}
+                                        onChange={onChange}
+                                      />
+                                    </div>
+                                  </div>
+
+                                  {/* <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                  <div className="field-label">Guests</div>
+                                  <div className="field-inner">
+                                    <Input
+                                      placeholder="Guest"
+                                      prefix={<MdOutlinePerson />}
+                                    />
+                                  </div>
+                                </div> */}
                                 </div>
-                              </div>
+                              )}
                             </div>
-                          )}
-                        </div>
-                        <div className="searchBtn">
+                          </div>
+                          {/* <div className="searchBtn">
                           <button
                             type="submit"
                             className="theme-btn btn-style-one"
@@ -242,9 +274,8 @@ const Hero3 = () => {
                               Search <i className="fa-solid fa-search"></i>
                             </span>
                           </button>
+                        </div> */}
                         </div>
-
-                        {/* </div> */}
                         {/* </form> */}
                       </div>
                       {/* <p className="lower-text">

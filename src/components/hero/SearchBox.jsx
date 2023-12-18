@@ -1,6 +1,6 @@
+import { MinusOutlined, PlusOutlined, UserOutlined } from "@ant-design/icons";
+import { Button, Popover, Table } from "antd";
 import React, { useState } from "react";
-import { Table, Popover, Button } from "antd";
-import { PlusOutlined, MinusOutlined, UserOutlined } from "@ant-design/icons";
 const totalSeat = [1];
 const seatLimit = 7;
 const SearchBox = () => {
@@ -107,7 +107,7 @@ const SearchBox = () => {
       trigger="click"
     >
       <Button
-        style={{ height: "50px", width: "150px" }}
+        style={{ height: "50px", width: "145px" }}
         icon={<UserOutlined />}
       >{`${totalSeat} Person`}</Button>
     </Popover>
