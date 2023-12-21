@@ -12,6 +12,7 @@
 
 .search-box-main {
   display: flex;
+  gap: 10px;
 }
 
 .search-box-main .form-group {

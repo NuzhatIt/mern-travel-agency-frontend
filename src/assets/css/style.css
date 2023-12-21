@@ -1351,11 +1351,11 @@ form label.error {
   font-weight: 400;
   color: #2e2e2e;
   text-transform: capitalize;
-  -moz-transition: all 300ms ease;
-  -webkit-transition: all 300ms ease;
-  -ms-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
-  transition: all 300ms ease;
+  -moz-transition: all 5ms ease;
+  -webkit-transition: all 5ms ease;
+  -ms-transition: all 5ms ease;
+  -o-transition: all 5ms ease;
+  transition: all 5ms ease;
 }
 
 .main-menu .navigation > li > ul > li:hover > a,
@@ -1741,8 +1741,8 @@ body.visible-sidebar {
   position: relative;
   display: block;
   background: #fff;
-  padding: 22px 170px 18px 24px;
-  margin-right: -280px;
+  padding: 22px 10px 18px 10px;
+  margin-right: -50%;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
   border-radius: 5px;
   z-index: 5;
@@ -1870,7 +1870,7 @@ body.visible-sidebar {
   position: relative;
   padding: 130px 0px 90px;
 }
-.signup-link{
+.signup-link {
   margin-left: 170px;
 }
 

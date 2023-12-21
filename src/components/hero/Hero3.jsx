@@ -6,12 +6,15 @@ import yellow1 from "../../assets/images/elements/yellow-1.png";
 import manWithBag from "../../assets/images/resources/misc/man-with-bag.jpg";
 import "./hero3.css";
 
+import {
+  CloseCircleOutlined,
+  CloseOutlined,
+  PlusOutlined,
+  SearchOutlined,
+} from "@ant-design/icons";
 import { Button, DatePicker, Input, Radio, Select } from "antd";
 import { CiLocationOn } from "react-icons/ci";
-import { MdOutlinePerson } from "react-icons/md";
 import SearchBox from "./SearchBox";
-import Test from "../test/test";
-import { SearchOutlined } from "@ant-design/icons";
 // const { RangePicker } = DatePicker;
 
 const Hero3 = () => {
@@ -24,6 +27,7 @@ const Hero3 = () => {
   const [tripType, setTripType] = useState(1);
   const changeService = (e) => {
     setService(e.target.value);
+    setTripType(1);
   };
   const changeTripType = (e) => {
     setTripType(e.target.value);
@@ -126,7 +130,7 @@ const Hero3 = () => {
                             <div className="row clearfix">
                               <div className="search-box-main">
                                 {service === "flight" && (
-                                  <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                  <div className="form-group col-lg col-md-12 col-sm-12">
                                     <div className="field-label">From</div>
                                     <div className="field-inner">
                                       <Input
@@ -137,7 +141,7 @@ const Hero3 = () => {
                                     </div>
                                   </div>
                                 )}
-                                <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                <div className="form-group col-lg col-md-12 col-sm-12">
                                   <div className="field-label">To</div>
                                   <div className="field-inner">
                                     <Input
@@ -147,8 +151,8 @@ const Hero3 = () => {
                                     />
                                   </div>
                                 </div>
-                                <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                  <div className="field-label">Check in</div>
+                                <div className="form-group col-lg col-md-12 col-sm-12">
+                                  <div className="field-label">In</div>
                                   <div className="field-inner">
                                     <DatePicker
                                       style={{ height: "50px" }}
@@ -159,8 +163,8 @@ const Hero3 = () => {
 
                                 {/* dont show checkout when flight is oneway*/}
                                 {!(service === "flight" && tripType === 1) && (
-                                  <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                    <div className="field-label">Check Out</div>
+                                  <div className="form-group col-lg col-md-12 col-sm-12">
+                                    <div className="field-label">Out</div>
                                     <div className="field-inner">
                                       <DatePicker
                                         style={{ height: "50px" }}
@@ -171,7 +175,7 @@ const Hero3 = () => {
                                 )}
 
                                 {/* number of guests/ customers  */}
-                                <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                <div className="form-group col-lg col-md-12 col-sm-12">
                                   <div className="field-label">Guests</div>
                                   <div className="field-inner">
                                     <SearchBox />
@@ -179,7 +183,7 @@ const Hero3 = () => {
                                 </div>
 
                                 {/* search button */}
-                                <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                <div className="form-group col-lg col-md-12 col-sm-12">
                                   <div className="field-label"></div>
                                   <div className="field-inner">
                                     <Button
@@ -187,32 +191,21 @@ const Hero3 = () => {
                                       style={{
                                         marginTop: "20px",
                                         height: "50px",
-                                        width: "140px",
+                                        width: "100%",
                                       }}
                                       icon={<SearchOutlined />}
                                     >
                                       Search
                                     </Button>
-                                    {/* <button
-                                type="button"
-                                className="themeBtn btnStyleOne"
-                              >
-                                <span>
-                                  Search <i className="fa-solid fa-search"></i>
-                                </span>
-                              </button> */}
                                   </div>
                                 </div>
-                                {/* <div className="searchBtn">
-                                <Button type="primary" className="theme-btn btn-style-one" icon={<SearchOutlined />}>Search</Button>
-                              </div> */}
                               </div>
 
                               {/* when flight is multicity show another search box */}
                               {service === "flight" && tripType === 3 && (
                                 <div className="search-box-main">
                                   {service === "flight" && (
-                                    <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                    <div className="form-group col-lg col-md-12 col-sm-12">
                                       <div className="field-label">From</div>
                                       <div className="field-inner">
                                         <Input
@@ -223,7 +216,7 @@ const Hero3 = () => {
                                       </div>
                                     </div>
                                   )}
-                                  <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                                  <div className="form-group col-lg col-md-12 col-sm-12">
                                     <div className="field-label">To</div>
                                     <div className="field-inner">
                                       <Input
@@ -233,8 +226,8 @@ const Hero3 = () => {
                                       />
                                     </div>
                                   </div>
-                                  <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                    <div className="field-label">Check in</div>
+                                  <div className="form-group col-lg col-md-12 col-sm-12">
+                                    <div className="field-label">In</div>
                                     <div className="field-inner">
                                       <DatePicker
                                         style={{ height: "50px" }}
@@ -242,8 +235,8 @@ const Hero3 = () => {
                                       />
                                     </div>
                                   </div>
-                                  <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                    <div className="field-label">Check Out</div>
+                                  <div className="form-group col-lg col-md-12 col-sm-12">
+                                    <div className="field-label">Out</div>
                                     <div className="field-inner">
                                       <DatePicker
                                         style={{ height: "50px" }}
@@ -252,29 +245,34 @@ const Hero3 = () => {
                                     </div>
                                   </div>
 
-                                  {/* <div className="form-group col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                                  <div className="field-label">Guests</div>
-                                  <div className="field-inner">
-                                    <Input
-                                      placeholder="Guest"
-                                      prefix={<MdOutlinePerson />}
-                                    />
+                                  <div className="form-group col-lg col-md-12 col-sm-12">
+                                    <div className="field-label"></div>
+                                    <div className="field-inner">
+                                      <Button
+                                        
+                                        style={{
+                                          marginTop: "20px",
+                                          height: "50px",
+                                          width: "40%",
+                                        }}
+                                        icon={<CloseOutlined />}
+                                      />
+                                    </div>
                                   </div>
-                                </div> */}
                                 </div>
                               )}
+
+                              {/* add city button for multicity */}
+                              <Button
+                                style={{
+                                  marginTop: "20px",
+                                  height: "50px",
+                                  width: "20%",
+                                }}
+                                icon={<PlusOutlined /> }
+                              >Add More Flight</Button>
                             </div>
                           </div>
-                          {/* <div className="searchBtn">
-                          <button
-                            type="submit"
-                            className="theme-btn btn-style-one"
-                          >
-                            <span>
-                              Search <i className="fa-solid fa-search"></i>
-                            </span>
-                          </button>
-                        </div> */}
                         </div>
                         {/* </form> */}
                       </div>

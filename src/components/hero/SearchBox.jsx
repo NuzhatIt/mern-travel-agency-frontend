@@ -75,7 +75,7 @@ const SearchBox = () => {
     );
 
     setData(updatedData);
-    console.log(totalSeat[0]);
+    // console.log(totalSeat[0]);
   };
 
   const content = (
@@ -107,7 +107,10 @@ const SearchBox = () => {
       trigger="click"
     >
       <Button
-        style={{ height: "50px", width: "145px" }}
+        style={{
+          height: "50px",
+          width: "100%" ,
+        }}
         icon={<UserOutlined />}
       >{`${totalSeat} Person`}</Button>
     </Popover>
