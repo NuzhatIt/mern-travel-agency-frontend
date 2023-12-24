@@ -134,6 +134,7 @@ const Hero3 = () => {
                                     <div className="field-label">From</div>
                                     <div className="field-inner">
                                       <Input
+                                        size="large"
                                         placeholder="From"
                                         prefix={<CiLocationOn />}
                                         onChange={onChange}
@@ -145,6 +146,7 @@ const Hero3 = () => {
                                   <div className="field-label">To</div>
                                   <div className="field-inner">
                                     <Input
+                                      size="large"
                                       placeholder="To"
                                       prefix={<CiLocationOn />}
                                       onChange={onChange}
@@ -155,7 +157,8 @@ const Hero3 = () => {
                                   <div className="field-label">In</div>
                                   <div className="field-inner">
                                     <DatePicker
-                                      style={{ height: "50px" }}
+                                      size="large"
+                                      // style={{ height: "50px" }}
                                       onChange={onChange}
                                     />
                                   </div>
@@ -167,7 +170,8 @@ const Hero3 = () => {
                                     <div className="field-label">Out</div>
                                     <div className="field-inner">
                                       <DatePicker
-                                        style={{ height: "50px" }}
+                                        size="large"
+                                        // style={{ height: "50px" }}
                                         onChange={onChange}
                                       />
                                     </div>
@@ -190,7 +194,7 @@ const Hero3 = () => {
                                       type="primary"
                                       style={{
                                         marginTop: "20px",
-                                        height: "50px",
+                                        // height: "50px",
                                         width: "100%",
                                       }}
                                       icon={<SearchOutlined />}
@@ -209,6 +213,7 @@ const Hero3 = () => {
                                       <div className="field-label">From</div>
                                       <div className="field-inner">
                                         <Input
+                                          size="large"
                                           placeholder="From"
                                           prefix={<CiLocationOn />}
                                           onChange={onChange}
@@ -220,6 +225,7 @@ const Hero3 = () => {
                                     <div className="field-label">To</div>
                                     <div className="field-inner">
                                       <Input
+                                        size="large"
                                         placeholder="To"
                                         prefix={<CiLocationOn />}
                                         onChange={onChange}
@@ -230,7 +236,8 @@ const Hero3 = () => {
                                     <div className="field-label">In</div>
                                     <div className="field-inner">
                                       <DatePicker
-                                        style={{ height: "50px" }}
+                                        size="large"
+                                        // style={{ height: "50px" }}
                                         onChange={onChange}
                                       />
                                     </div>
@@ -239,7 +246,8 @@ const Hero3 = () => {
                                     <div className="field-label">Out</div>
                                     <div className="field-inner">
                                       <DatePicker
-                                        style={{ height: "50px" }}
+                                        size="large"
+                                        // style={{ height: "50px" }}
                                         onChange={onChange}
                                       />
                                     </div>
@@ -249,10 +257,9 @@ const Hero3 = () => {
                                     <div className="field-label"></div>
                                     <div className="field-inner">
                                       <Button
-                                        
                                         style={{
                                           marginTop: "20px",
-                                          height: "50px",
+                                          // height: "50px",
                                           width: "40%",
                                         }}
                                         icon={<CloseOutlined />}
@@ -263,14 +270,16 @@ const Hero3 = () => {
                               )}
 
                               {/* add city button for multicity */}
-                              <Button
+                              {/* <Button
                                 style={{
                                   marginTop: "20px",
-                                  height: "50px",
+                                  // height: "50px",
                                   width: "20%",
                                 }}
-                                icon={<PlusOutlined /> }
-                              >Add More Flight</Button>
+                                icon={<PlusOutlined />}
+                              >
+                                Add More Flight
+                              </Button> */}
                             </div>
                           </div>
                         </div>

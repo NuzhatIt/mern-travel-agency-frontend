@@ -1,11 +1,48 @@
 import logoImage from "../../assets/images/logo.png";
-import flyingBirdLogo from '../../assets/images/flying-bird-logo3.png'
+import flyingBirdLogo from "../../assets/images/flying-bird-logo3.png";
 
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import menuIcon from "../../assets/images/icons/menu-icon.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { useLogoutMutation } from "../../redux/slices/userApiSlice";
+import { Dropdown, Space } from "antd";
+import { DownOutlined } from "@ant-design/icons";
+import { clearCredentials } from "../../redux/slices/authSlice";
+import Dashboard from './../../pages/user/Dashboard';
 
 const Navbar3 = () => {
+  const { userInfo } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [logoutApiCall] = useLogoutMutation();
+
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(clearCredentials());
+      navigate("/login");
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const items = [
+    {
+      key: "1",
+      label: <NavLink to="/dashboard">Dashboard</NavLink>,
+    },
+    {
+      key: "2",
+      label: "Logout",
+      onClick: () => {
+        logoutHandler();
+      },
+    },
+  ];
+
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {
@@ -270,7 +307,18 @@ const Navbar3 = () => {
               {/* ----------- */}
               <div className="links-box clearfix">
                 <div className="link login">
-                  <NavLink to="/login">Login / Signup</NavLink>
+                  {userInfo ? (
+                    <Dropdown menu={{ items }}>
+                      <a onClick={(e) => e.preventDefault()}>
+                        <Space>
+                          {userInfo.data.name}
+                          <DownOutlined />
+                        </Space>
+                      </a>
+                    </Dropdown>
+                  ) : (
+                    <NavLink to="/login">Login / Signup</NavLink>
+                  )}
                 </div>
                 {/* <div className="link lang-box hidden">
                   <div className="lang-btn clearfix">

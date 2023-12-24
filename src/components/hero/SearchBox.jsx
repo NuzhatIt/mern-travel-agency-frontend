@@ -107,9 +107,10 @@ const SearchBox = () => {
       trigger="click"
     >
       <Button
+        size=""
         style={{
-          height: "50px",
-          width: "100%" ,
+          // height: "50px",
+          width: "100%",
         }}
         icon={<UserOutlined />}
       >{`${totalSeat} Person`}</Button>

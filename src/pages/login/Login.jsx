@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input, Select } from "antd";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { LockOutlined, MailOutlined, UserOutlined } from "@ant-design/icons";
+import { Button, Checkbox, Form, Input, Select, Spin } from "antd";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar3 from "./../../components/navbar/Navbar3";
 import WhatsAppChat from "./../../components/whatsapp/WhatsappChat";
 import ScrollToTop from "./../../components/scroll-to-top/ScrollToTop";
@@ -11,6 +11,11 @@ import bgGradient1 from "../../assets/images/background/bg-gradient-1.png";
 import yellow1 from "../../assets/images/elements/yellow-1.png";
 import useWOW from "../../custom-hooks/useWOW";
 import manWithBag from "../../assets/images/resources/misc/man-with-bag.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { useLoginMutation } from "../../redux/slices/userApiSlice";
+import { setCredentials } from "../../redux/slices/authSlice";
+import { toast } from "react-toastify";
+import Loader from "../../components/loader/Loader";
 
 const formItemLayout = {
   labelCol: {
@@ -44,14 +49,43 @@ const tailFormItemLayout = {
 };
 
 const Login = () => {
-  const { initWOW } = useWOW();
-  useEffect(() => {
-    initWOW();
-  }, []);
+  // const { initWOW } = useWOW();
+  // useEffect(() => {
+  //   initWOW();
+  // }, []);
   // const [form] = Form.useForm();
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [loginApiCall, { isLoading }] = useLoginMutation();
+
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/");
+    }
+  }, [navigate, userInfo]);
+
+  const onFinish = async (values) => {
+    try {
+      // calling backend
+      const res = await loginApiCall({ email, password }).unwrap();
+
+      console.log(res);
+
+      //set credentials to redux store and localstorage
+      dispatch(setCredentials({ ...res }));
+      navigate("/", { replace: true });
+    } catch (error) {
+      toast.error(error.data.errors);
+    }
   };
+
   return (
     <div className="page-wrapper">
       <WhatsAppChat />
@@ -111,7 +145,12 @@ const Login = () => {
                             },
                           ]}
                         >
-                          <Input placeholder="Type your email" />
+                          <Input
+                            size="large"
+                            prefix={<MailOutlined />}
+                            placeholder="Type your email"
+                            onChange={(e) => setEmail(e.target.value)}
+                          />
                         </Form.Item>
 
                         <Form.Item
@@ -124,7 +163,11 @@ const Login = () => {
                             },
                           ]}
                         >
-                          <Input.Password />
+                          <Input.Password
+                            size="large"
+                            prefix={<LockOutlined />}
+                            onChange={(e) => setPassword(e.target.value)}
+                          />
                         </Form.Item>
 
                         <Form.Item {...tailFormItemLayout}>
@@ -140,6 +183,10 @@ const Login = () => {
                         </Form.Item>
                       </Form>
                       {/* login form ends */}
+
+                      {/* loader  */}
+                      {isLoading && <Loader isLoading={isLoading}/>}
+                      
 
                       <p className="text-center signup-link">
                         Don't have an account? <Link to="/signup">Signup</Link>

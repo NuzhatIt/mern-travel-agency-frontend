@@ -23,6 +23,8 @@ import Dashboard from "../pages/dashboard/Dashboard";
 // import Tables from "../pages/dashboard/Tables";
 import "../assets/styles/main.css";
 import "../assets/styles/responsive.css";
+import Navbar3 from "./../components/navbar/Navbar3";
+import ProtectedRoute from "./ProtectedRoute";
 
 const Routers = () => {
   return (
@@ -42,20 +44,27 @@ const Routers = () => {
       <Route path="/blog" element={<Blog />} />
       <Route path="/blogdetails" element={<BlogDetails />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/dashboard" element={<Dashboard active={"home"} />} />
-      <Route
-        path="/dashboard/tables"
-        element={<Dashboard active={"tables"} />}
-      />
-      <Route
-        path="/dashboard/billing"
-        element={<Dashboard active={"billing"} />}
-      />
-      {/* <Route path="/dashboard/rtl" element={<Dashboard active={"rtl"} />} /> */}
-      <Route
-        path="/dashboard/profile"
-        element={<Dashboard active={"profile"} />}
-      />
+
+      {/* protected route starts */}
+      <Route path="" element={<ProtectedRoute/>}>
+        <Route path="/dashboard" element={<Dashboard active={"home"} />} />
+
+        <Route
+          path="/dashboard/tables"
+          element={<Dashboard active={"tables"} />}
+        />
+        <Route
+          path="/dashboard/billing"
+          element={<Dashboard active={"billing"} />}
+        />
+        {/* <Route path="/dashboard/rtl" element={<Dashboard active={"rtl"} />} /> */}
+        <Route
+          path="/dashboard/profile"
+          element={<Dashboard active={"profile"} />}
+        />
+      </Route>
+      {/* protected route ends */}
+
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="*" element={<NotFound />} />

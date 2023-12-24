@@ -1,16 +1,20 @@
 import { Button, Checkbox, Form, Input, Select } from "antd";
-import React, { useEffect } from "react";
-import manWithBag from "../../assets/images/resources/misc/man-with-bag.jpg";
-import WhatsAppChat from "../../components/whatsapp/WhatsappChat";
-import ScrollToTop from "../../components/scroll-to-top/ScrollToTop";
-import Navbar3 from "../../components/navbar/Navbar3";
-import Footer3 from "../../components/footer/Footer3";
+import React, { useEffect, useState } from "react";
 import bannerArrow from "../../assets/images/background/banner-arrow.png";
 import bgGradient1 from "../../assets/images/background/bg-gradient-1.png";
 import yellow1 from "../../assets/images/elements/yellow-1.png";
+import manWithBag from "../../assets/images/resources/misc/man-with-bag.jpg";
+import Footer3 from "../../components/footer/Footer3";
+import Navbar3 from "../../components/navbar/Navbar3";
+import ScrollToTop from "../../components/scroll-to-top/ScrollToTop";
+import WhatsAppChat from "../../components/whatsapp/WhatsappChat";
 
-import useWOW from "../../custom-hooks/useWOW";
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import Loader from "../../components/loader/Loader";
+import { useRegisterMutation } from "../../redux/slices/userApiSlice";
+import { toast } from "react-toastify";
+import { setCredentials } from "../../redux/slices/authSlice";
 const { Option } = Select;
 
 const formItemLayout = {
@@ -45,25 +49,65 @@ const tailFormItemLayout = {
 };
 
 const Signup = () => {
-  const { initWOW } = useWOW();
-  useEffect(() => {
-    initWOW();
-  }, []);
+  // const { initWOW } = useWOW();
+  // useEffect(() => {
+  //   initWOW();
+  // }, []);
   // const [form] = Form.useForm();
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [gender, setGender] = useState("");
+  const [agreement, setAgreement] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [registerApiCall, { isLoading }] = useRegisterMutation();
+
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/");
+    }
+  }, [navigate, userInfo]);
+
+  const onFinish = async (values) => {
+    // console.log(name,email,phone,password,gender,agreement);
+    try {
+      // calling backend
+      const res = await registerApiCall({
+        name,
+        email,
+        phone,
+        password,
+        gender,
+        agreement,
+        // ...values,
+      }).unwrap();
+      // console.log(res);
+      //set credentials to redux store and localstorage
+      dispatch(setCredentials({ ...res }));
+      navigate("/", { replace: true });
+    } catch (error) {
+      console.log(error);
+      toast.error(error.data.errors);
+    }
   };
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="88">+88</Option>
-      </Select>
-    </Form.Item>
-  );
+  // const prefixSelector = (
+  //   <Form.Item name="prefix" noStyle>
+  //     <Select
+  //       style={{
+  //         width: 70,
+  //       }}
+  //     >
+  //       <Option value="+88">+88</Option>
+  //     </Select>
+  //   </Form.Item>
+  // );
 
   return (
     <div className="page-wrapper">
@@ -111,7 +155,7 @@ const Signup = () => {
                         scrollToFirstError
                       >
                         <Form.Item
-                          name="fullname"
+                          name="name"
                           label="Full Name"
                           rules={[
                             {
@@ -128,7 +172,11 @@ const Signup = () => {
                           ]}
                           hasFeedback
                         >
-                          <Input placeholder="Type yor name" />
+                          <Input
+                            size="large"
+                            placeholder="Type yor name"
+                            onChange={(e) => setName(e.target.value)}
+                          />
                         </Form.Item>
 
                         <Form.Item
@@ -146,7 +194,11 @@ const Signup = () => {
                           ]}
                           hasFeedback
                         >
-                          <Input placeholder="Type your email" />
+                          <Input
+                            size="large"
+                            placeholder="Type your email"
+                            onChange={(e) => setEmail(e.target.value)}
+                          />
                         </Form.Item>
 
                         <Form.Item
@@ -158,17 +210,26 @@ const Signup = () => {
                               message: "Please input your phone number!",
                             },
                             {
-                              min: 11,
-                              message: "Phone number must be 11 digits",
+                              validator: (_, value) =>
+                                value &&
+                                /(^(\+88|0088)?(01){1}[3456789]{1}(\d){8})$/.test(value)
+                                  ? Promise.resolve()
+                                  : Promise.reject("Use valid phone number"),
                             },
+                            // {
+                            //   min: 11,
+                            //   message: "Phone number must be 11 digits",
+                            // },
                           ]}
                           hasFeedback
                         >
                           <Input
-                            addonBefore={prefixSelector}
+                            size="large"
+                            // addonBefore={prefixSelector}
                             style={{
                               width: "100%",
                             }}
+                            onChange={(e) => setPhone(e.target.value)}
                           />
                         </Form.Item>
 
@@ -194,7 +255,10 @@ const Signup = () => {
                           ]}
                           hasFeedback
                         >
-                          <Input.Password />
+                          <Input.Password
+                            size="large"
+                            onChange={(e) => setPassword(e.target.value)}
+                          />
                         </Form.Item>
 
                         <Form.Item
@@ -224,7 +288,7 @@ const Signup = () => {
                             }),
                           ]}
                         >
-                          <Input.Password />
+                          <Input.Password size="large" />
                         </Form.Item>
 
                         <Form.Item
@@ -237,10 +301,14 @@ const Signup = () => {
                             },
                           ]}
                         >
-                          <Select placeholder="Select your gender">
-                            <Option value="male">Male</Option>
-                            <Option value="female">Female</Option>
-                            <Option value="other">Other</Option>
+                          <Select
+                            size="large"
+                            placeholder="Select your gender"
+                            onChange={(value) => setGender(value)}
+                          >
+                            <Option value="MALE">Male</Option>
+                            <Option value="FEMALE">Female</Option>
+                            <Option value="OTHERS">Others</Option>
                           </Select>
                         </Form.Item>
                         <Form.Item
@@ -258,9 +326,10 @@ const Signup = () => {
                           ]}
                           {...tailFormItemLayout}
                         >
-                          <Checkbox style={{
-                            
-                          }}>
+                          <Checkbox
+                            style={{}}
+                            onChange={(e) => setAgreement(e.target.checked)}
+                          >
                             I have read the <a href="">agreement</a>
                           </Checkbox>
                         </Form.Item>
@@ -277,9 +346,13 @@ const Signup = () => {
                         </Form.Item>
                       </Form>
                       {/* signup form ends */}
-                      
-                        <p className="text-center signup-link">Already have an account? <Link to='/login'>Log In</Link></p>
-                      
+
+                      {/* loader  */}
+                      {isLoading && <Loader isLoading={isLoading} />}
+
+                      <p className="text-center signup-link">
+                        Already have an account? <Link to="/login">Log In</Link>
+                      </p>
                     </div>
                   </div>
                 </div>
